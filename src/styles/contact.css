@@ -1,0 +1,279 @@
+.body {
+    display: flex
+}
+
+.left-wing {
+    width: 75%;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100vh;
+}
+
+.left-wing-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.left-wing-top-inner {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    height: 50px;
+}
+
+/* .left-wing-body{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+} */
+.right-wing-top {
+    /* border-bott  om: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.right-wing-top-inner {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    height: 50px;
+    width: 100%;
+}
+
+.page-title {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    padding-right: 15px;
+}
+
+.sidebar-title,
+.sidebar-sub-title {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    word-spacing: .2em;
+    padding-left: 4em !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-sub-title {
+    margin-top: 2em;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-body-contact .sidebar {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding-left: 8em;
+    margin-top: .5em;
+
+}
+
+.sidebar-body-contact div {
+    /* height: 40px; */
+    display: flex;
+    /* align-items: center; */
+}
+
+.flex-align {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-body-contact {
+    /* height: 100vh; */
+    overflow-y: auto;
+    /* margin-bottom: 20em;
+    height: 61vh; */
+}
+
+.right-wing {
+    width: 25%;
+}
+
+.section,
+.span {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    height: 30px
+}
+
+.section {
+    color: #FFBD44;
+}
+
+.span {
+    color: hsla(234, 63%, 58%, 1);
+}
+
+.contact-body {
+    width: 736px;
+    text-align: left;
+    /* TODO u might later want to remove this */
+    /* float: right; */
+    margin-left: 4%;
+}
+
+.white-exp-text {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #fff;
+}
+
+.max-width {
+    /* width: 90%;
+    background: red;
+    margin-left: auto; */
+    margin-bottom: 20em;
+}
+
+.tabcontent {
+    padding: 8px 16px;
+}
+
+.tabcontent-sm {
+    padding: 0px 20px;
+}
+
+.left-wing-body {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.left-wing-body::-webkit-scrollbar,
+.sidebar-body::-webkit-scrollbar {
+    width: 0px;
+}
+
+.social-media-contact {
+    height: 35px;
+    /* background: red; */
+}
+
+.inputs-container input {
+    width: 520px;
+    height: 55px;
+    background: #252526;
+    box-shadow: 0px 0px 2.86885px rgba(255, 255, 255, 0.5);
+    border-radius: 4.32861px;
+    border: none;
+    outline: none;
+    padding-left: 1em;
+    color: #fff;
+}
+
+.inputs-container input:focus {
+    border: 1px solid #fff
+}
+
+.label {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    /* identical to box height, or 188% */
+
+    letter-spacing: 0.08em;
+    margin-bottom: .5em;
+    color: #FFFFFF;
+
+}
+
+.inputs-container {
+    margin-bottom: 1em;
+    /* margin-top: 3em; */
+}
+
+.contact-info {
+    margin-top: 3em;
+}
+
+textarea {
+    width: 520px;
+    height: 220px;
+    padding-left: 1em;
+    padding-top: 1em;
+    color: #fff;
+
+    background: #252526;
+    box-shadow: 0px 0px 2.86885px rgba(255, 255, 255, 0.5);
+    border-radius: 4.32861px;
+}
+
+.submit-mail {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 20px;
+    gap: 10px;
+
+    width: fit-content;
+    height: 46px;
+    background: hsla(0, 0%, 18%, 1);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 74.37%;
+
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1300px) {
+    .sidebar-body-contact .sidebar {
+        font-family: 'Consolas';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        letter-spacing: 0.08em;
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5em;
+        margin-top: .5em;
+    }
+
+    .right-wing {
+        width: 30% !important
+    }
+
+    .left-wing {
+        width: 70% !important
+    }
+}

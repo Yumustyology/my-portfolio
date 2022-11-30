@@ -1,0 +1,70 @@
+.footer {
+    height: 45px;
+    width: 100%;
+    background: hsla(0, 0%, 12%, 1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.right-footer,
+.left-footer {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    height: 45px;
+    justify-content: flex-end;
+    border-top: none;
+}
+
+.left-footer {
+    border-left: none;
+}
+
+.right-footer {
+    border-right: none;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1em;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 74.37%;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    width:23.7% !important;
+}
+
+.find-me {
+    text-align: right;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 74.37%;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    padding-right: .5em;
+}
+
+.icon {
+    width: 45px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.git-link {
+    cursor: pointer;
+}

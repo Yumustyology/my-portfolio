@@ -1,0 +1,99 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.app-left {
+    /* background:green; */
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.app-right {
+    /* background: white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-left,
+.app-right {
+    width: 50%;
+    height: 100vh;
+}
+
+.app-intro {
+    /* margin-top: 15%; */
+    margin-top: 20%;
+    font-family: consolas;
+    text-align: left;
+}
+
+.hello-txt {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 74.37%;
+    /* identical to box height, or 12px */
+margin-bottom: .5em;
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+}
+
+.name-txt {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+
+}
+
+.more-info {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 74.37%;
+
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+    margin-top: .5em;
+}
+
+.more-info-txt {
+    color: hsla(1, 100%, 68%, 1)
+}
+
+.contact-btn {
+
+    padding: 15px 20px;
+    gap: 10px;
+    width: 183px;
+    height: 46px;
+
+
+    background: hsla(0, 0%, 18%, 1);
+    border-radius: 5px;
+
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 74.37%;
+
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    margin-top: 2em;
+    cursor: pointer;
+}
