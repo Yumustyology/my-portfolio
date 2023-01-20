@@ -1,0 +1,33 @@
+.slider-container {
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.slider-container {
+    width: 100%;
+    /* background: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-slide {
+    text-align: left;
+    color: #fff;
+}
+
+.marquee-data {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    word-spacing: .5em;
+}
+
+.bottom-marquee {
+    /* margin-top: -18em; */
+    margin-top: -36em;  
+
+}

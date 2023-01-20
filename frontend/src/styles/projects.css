@@ -1,0 +1,431 @@
+.body {
+    display: flex
+}
+
+.left-wing {
+    width: 75%;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100vh;
+}
+
+.left-wing-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.left-wing-top-inner {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    height: 50px;
+}
+
+/* .left-wing-body{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+} */
+.right-wing-top {
+    /* border-bott  om: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.right-wing-top-inner {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    height: 50px;
+    width: 100%;
+}
+
+.page-title-container {
+    width: 295px;
+    overflow-x: auto;
+    height: 50px;
+    justify-content: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding-right: 9px;
+    overflow: auto;
+}
+
+.page-title-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.projects-page-title {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    padding-right: 15px;
+    flex-wrap: nowrap;
+}
+
+.sidebar-title,
+.sidebar-sub-title {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    word-spacing: .2em;
+    padding-left: 4em !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.sidebar-title{
+    cursor: pointer;
+}
+.sidebar-sub-title {
+    margin-top: 2em;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-body-project .sidebar {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5em;
+    margin-top: 1em;
+}
+
+
+.sidebar-body-project div {
+    display: flex;
+}
+
+.flex-align {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-body-project {
+    overflow-y: auto;
+    transition: 1s;
+}
+
+.right-wing {
+    width: 25%;
+}
+
+.section,
+.span {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    height: 30px
+}
+
+.section {
+    color: #FFBD44;
+}
+
+.span {
+    color: hsla(234, 63%, 58%, 1);
+}
+
+.project-body {
+    width: 736px;
+    text-align: left;
+    /* TODO u might later want to remove this */
+    /* float: right; */
+    margin-left: 4%;
+}
+
+.white-exp-text {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #fff;
+}
+
+.left-wing-body {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.left-wing-body::-webkit-scrollbar,
+.sidebar-body::-webkit-scrollbar {
+    width: 0px;
+}
+
+.social-media-project {
+    height: 35px;
+}
+
+.projects-info {
+    margin-top: 3em;
+    width: 375px;
+    /* margin-right: 4em; */
+    /* background: red; */
+
+}
+
+.projects-body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    justify-content: space-around;
+    /* background: red; */
+    margin: 0 auto;
+}
+
+.project-info {
+    width: 348px;
+    height: 135px;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    text-align: left;
+    margin: 0 auto;
+    /* display: flex; */
+
+}
+
+.project-links {
+    width: 348px;
+    text-align: left;
+    margin: 0 auto;
+    height: 16px;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.08;
+    color: #FFFFFF;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.project-card {
+    width: 375px;
+    height: 376px;
+    background: hsla(240, 1%, 15%, 1);
+    box-shadow: 0px 0px 2.86885px rgba(255, 255, 255, 0.5);
+    border-radius: 4.32861px;
+    overflow: hidden;
+}
+
+.project-name {
+    text-align: left;
+    width: 100%;
+    height: 40px;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: hsla(0, 0%, 100%, 1);
+}
+
+.project-name span {
+    color: #ff5f5c;
+}
+
+.project-image {
+    height: 190px;
+    margin-bottom: 1em;
+}
+
+.project-img {
+    width: 375px;
+    max-height: 198px
+}
+
+.live-preview {
+    display: flex;
+    align-items: center;
+    width: 203px;
+    height: 34px;
+    /* background: red; */
+    cursor: pointer
+}
+
+.next-btn {
+    margin-top: .3em;
+    margin-left: 1.8em;
+}
+
+.git-preview {
+    margin-top: .3em;
+    margin-left: 1.8em;
+    cursor: pointer
+}
+
+input[type="checkbox"]:checked {
+    background: hsla(224, 13%, 23%, 1);
+    color: white;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: #1E1E1E;
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    color: white;
+    accent-color: hsla(0, 0%, 18%, 1);
+    border-radius: 3px;
+}
+
+input[type="checkbox"]:after {
+    content: ' ';
+    position: relative;
+    left: 40%;
+    top: 20%;
+    width: 15%;
+    height: 40%;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(50deg);
+    display: none;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+
+.sidebar-body-project {
+    overflow-y: auto;
+    margin-bottom: 20em;
+    height: 55vh;
+}
+
+.left-wing-body::-webkit-scrollbar,
+.sidebar-body-project::-webkit-scrollbar {
+    width: 0px;
+}
+
+.label {
+    cursor: pointer
+}
+
+.project-open-tag,
+.project-close-tag {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: hsla(234, 63%, 58%, 1);
+    height: 30px;
+    opacity: 0.5;
+}
+.not-found-container{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.not-found-text{
+    color: white;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    color: #fff;
+}
+.max-width {
+    width: 90% !important;
+    /* background: red; */
+    margin-left: auto;
+    margin-bottom: 20em;
+}
+
+
+
+@media screen and (max-width:1250px) {
+    .max-width {
+        width: 90% !important;
+        margin-left: auto;
+        margin-bottom: 20em;
+    }
+}
+
+@media screen and (max-width:1230px) {
+    .max-width {
+        width: 91% !important;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .max-width {
+        width: 95% !important;
+        margin-left: auto; 
+    }
+    
+}
+
+@media screen and (max-width:1220px) {
+    .projects-info {
+        margin-right: 4em;
+    }
+
+    .projects-body{
+        justify-content: center !important;
+    }
+
+}
+
+@media screen and (max-width:1300px) {
+    .sidebar-body-project .sidebar {
+        font-family: 'Consolas';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        letter-spacing: 0.08em;
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5em;
+        margin-top: .5em;
+    }
+
+    .right-wing {
+        width: 30% !important
+    }
+
+    .left-wing {
+        width: 70% !important
+    }
+}
