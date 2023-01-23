@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     width: 250px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
     height: 45px;
     justify-content: flex-end;
     border-top: none;
@@ -54,10 +54,10 @@
     padding-right: .5em;
 }
 
-.icon {
+.icon,.git-icon{
     width: 45px;
     border-left: 1px solid rgba(255, 255, 255, 0.5);
-    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    /* border-right: 1px solid rgba(255, 255, 255, 0.5); */
     height: 45px;
     display: flex;
     align-items: center;
@@ -67,4 +67,41 @@
 
 .git-link {
     cursor: pointer;
+}
+.git-icon{
+    display:none;
+}
+
+@media screen and (max-width: 899px) {
+    .right-footer{
+        width: fit-content !important;
+        padding-right: 1em;
+    }
+}
+
+@media screen and (max-width: 446px) {
+    .right-footer,.find-me{
+      font-size: 15px;
+    }
+}
+
+@media screen and (max-width:479px) {
+    .git-icon-link-tag{
+        display: contents;
+    }
+}
+
+@media screen and (max-width: 396px) {
+    .right-footer{
+        display: none;
+    }
+    .left-footer{
+        width: 100%;
+    }
+    .git-icon{
+        display: flex;
+    }
+    .right-footer,.find-me{
+        font-size: 17px;
+      }
 }

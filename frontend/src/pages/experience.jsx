@@ -182,42 +182,6 @@ function Experience() {
                       </div>
                     </div>
                   ))}
-
-                <div>
-                  <div className="experience-info">
-                    <div className="experience-wrap-open-tag">
-                      &lt;
-                      <span className="white-wrap-tag-text">tagName</span>
-                      &gt;
-                    </div>
-                    <div className="tabcontent-sm">
-                      <div style={{ marginBottom: ".5em" }}>
-                        <span className="experience-name">companyName</span>
-                        <span className="experience-country">
-                          ,.country &nbsp;&#8212;&nbsp;
-                        </span>
-                        <span className="experience-role">role,</span>
-                        <div>
-                          <b className="experience-date">
-                            data?.fromDate &nbsp;&#8212;&nbsp; data?.toDate
-                          </b>
-                        </div>
-                      </div>
-                      <span className="white-exp-text">
-                        tasks
-                        <br />
-                      </span>
-                      <br />
-                      <br />
-                    </div>
-                    <div></div>
-                    <div className="experience-wrap-close-tag">
-                      &lt;
-                      <span className="white-wrap-tag-text">/tagName</span>
-                      &gt;
-                    </div>
-                  </div>
-                </div>
               </div>
               {/* experience info box ends */}
             </div>

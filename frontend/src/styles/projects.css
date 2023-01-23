@@ -61,6 +61,7 @@
     letter-spacing: 0.08em;
     color: #FFFFFF;
     padding-right: 15px;
+    padding-left: 15px;
     flex-wrap: nowrap;
 }
 
@@ -316,6 +317,7 @@ input[type="checkbox"]:after {
 
 input[type="checkbox"]:checked:after {
     display: block;
+    /* display: inline-flex; */
 }
 
 
@@ -369,6 +371,10 @@ input[type="checkbox"]:checked:after {
     margin-left: auto;
     margin-bottom: 20em;
 }
+
+.projects-language-filter::-webkit-scrollbar{
+    display: none;
+  }
 
 
 
@@ -427,5 +433,55 @@ input[type="checkbox"]:checked:after {
 
     .left-wing {
         width: 70% !important
+    }
+}
+@media screen and (min-width: 899px) {
+    .project-open-tag, .project-close-tag{
+        
+    }
+}
+@media screen and (max-width:525px) {
+    .projects-page-title,.page-title-container{
+        width:100%;
+    }
+    .project-open-tag, .project-close-tag{
+        font-size: 25px;
+    }
+    .not-found-text{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .project-open-tag, .project-close-tag{
+        font-size: 18px;
+    }
+    .not-found-text{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:366px) {
+    .project-open-tag, .project-close-tag{
+        font-size: 18px;
+    }
+    .not-found-text{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:315px) {
+    .project-open-tag, .project-close-tag{
+        font-size: 15px;
+    }
+    .not-found-text{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:266px) {
+    .project-open-tag, .project-close-tag{
+        font-size: .9em;
+    }
+    .not-found-text{
+        font-size: .6em
     }
 }

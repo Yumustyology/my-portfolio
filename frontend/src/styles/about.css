@@ -458,7 +458,7 @@ textarea {
 
 }
 
-@media screen and (min-width:899px) {
+@media screen and (min-width:900px) {
     .md-drop-down,.nav-link-inner{
         display: none;
     }
