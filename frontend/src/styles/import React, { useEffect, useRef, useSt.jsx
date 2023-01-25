@@ -7,7 +7,6 @@ import ExperienceList from "../components/experienceList";
 import { experienceList } from "../data";
 import { axios } from "../utils/axios";
 import { FormatDate as formatDate } from "../utils/dateFormat";
-import CircleText from "../components/circleText";
 
 const RightWingBar = ({ sidebarOpen, toggleSideNav, experiences }) => {
   const repeat = [
@@ -77,16 +76,17 @@ function Experience() {
       <div className="body">
         <div className="left-wing">
           <div className="left-wing-top">
-            <div className="left-wing-top-inner"></div>
-            <div className="page-title">Experience</div>
-            <div className="left-wing-top-inner md-drop-down">
-              <div>
-                <RightWingBar
-                  experiences={experiences}
-                  sidebarOpen={sidebarOpen}
-                  setSidebarOpen={setSidebarOpen}
-                  toggleSideNav={toggleSideNav}
-                />
+            <div className="left-wing-top-inner">
+              <div className="page-title">Experience</div>
+              <div className="left-wing-top-inner md-drop-down">
+                <div>
+                  <RightWingBar
+                    experiences={experiences}
+                    sidebarOpen={sidebarOpen}
+                    setSidebarOpen={setSidebarOpen}
+                    toggleSideNav={toggleSideNav}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -134,8 +134,8 @@ function Experience() {
               {/* <ExperienceList /> */}
 
               <div className="experience-info-box">
-                {experienceList.length > 0 &&
-                  experienceList.map((data, i) => (
+                {experiences.length > 0 &&
+                  experiences.map((data, i) => (
                     <div key={i} id={i}>
                       <div className="experience-info">
                         <div className="experience-wrap-open-tag">
@@ -184,29 +184,28 @@ function Experience() {
                     </div>
                   ))}
 
-                {/* <div>
+                <div>
                   <div className="experience-info">
                     <div className="experience-wrap-open-tag">
                       &lt;
-                      <span className="white-wrap-tag-text">data</span>
+                      <span className="white-wrap-tag-text">tagName</span>
                       &gt;
                     </div>
                     <div className="tabcontent-sm">
                       <div style={{ marginBottom: ".5em" }}>
-                        <span className="experience-name">data</span>
+                        <span className="experience-name">companyName</span>
                         <span className="experience-country">
-                          ,data &nbsp;&#8212;&nbsp;
+                          ,.country &nbsp;&#8212;&nbsp;
                         </span>
-                        <span className="experience-role">data,</span>
+                        <span className="experience-role">role,</span>
                         <div>
                           <b className="experience-date">
-                            data 
-                            &nbsp;&#8212;&nbsp; data
+                            data?.fromDate &nbsp;&#8212;&nbsp; data?.toDate
                           </b>
                         </div>
                       </div>
                       <span className="white-exp-text">
-                        data
+                        tasks
                         <br />
                       </span>
                       <br />
@@ -215,21 +214,13 @@ function Experience() {
                     <div></div>
                     <div className="experience-wrap-close-tag">
                       &lt;
-                      <span className="white-wrap-tag-text">/data.</span>
+                      <span className="white-wrap-tag-text">/tagName</span>
                       &gt;
                     </div>
                   </div>
-                </div> */}
+                </div>
               </div>
               {/* experience info box ends */}
-              <div className="rotating-text-box fixed">
-                <CircleText
-                  prevPage="/about"
-                  nextPage="/projects"
-                  isPrevPage={true}
-                  isNextPage={true}
-                />
-              </div>
             </div>
           </div>
         </div>

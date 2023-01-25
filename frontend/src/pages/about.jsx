@@ -223,7 +223,6 @@ const RightWingBar = ({
   );
 };
 
-
 function About() {
   let getAboutTab = window.localStorage.getItem("aboutTab");
   const [sidebarBottomOpen, setSidebarBottomOpen] = useState(false);
@@ -390,9 +389,16 @@ function About() {
                 </section>
               </div>
               {/* next btn */}
-              <div className="">
-                <CircleText />
+              {/* <div className=""> */}
+              <div className="rotating-text-box fixed">
+                <CircleText
+                  prevPage="/"
+                  nextPage="/experience"
+                  isPrevPage={true}
+                  isNextPage={true}
+                />
               </div>
+              {/* </div> */}
             </div>
           </div>
           <div className="right-wing">

@@ -16,6 +16,7 @@ import { axios } from "../utils/axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClipLoader } from "react-spinners";
+import CircleText from "../components/circleText";
 
 const RightWingBar = ({
   tab,
@@ -304,6 +305,14 @@ function Contact() {
                   </div>
                 </div>
               </section>
+              <div className="rotating-text-box fixed">
+                <CircleText
+                  prevPage="/projects"
+                  nextPage="/"
+                  isPrevPage={true}
+                  isNextPage={false}
+                />
+              </div>
             </div>
           </div>
         </div>

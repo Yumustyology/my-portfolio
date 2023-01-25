@@ -97,3 +97,155 @@
         left: initial !important;
     }
 }
+
+@media screen and (max-width:1120px) {
+    .more-info{
+        letter-spacing: 0.02em;
+    }
+    .name-txt {
+        font-size: 50px    
+    }
+    .more-info {
+        font-size: 19px;
+    }
+
+}
+
+@media screen and (max-width:950px) {
+    .more-info{
+        letter-spacing: 0.01em;
+    }
+    .name-txt {
+        font-size: 45px    
+    }
+    .more-info {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width:1000px) {
+    .container {
+            
+    }
+}
+
+@media screen and (max-width:899px){
+  .container{
+    flex-direction: column;
+    height: auto;
+    margin-top: 15%;
+  }
+  .app-intro {
+    /* margin-top: 8%; */
+    margin-top:6em;
+}
+.app-left{
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+}
+
+@media screen and (max-width:899px) and (min-height:786px) {
+    .name-txt {
+        font-size: 50px    
+    }
+    .more-info {
+        font-size: 20px;
+    }
+    .app-intro {
+        /* margin-top: 8%; */
+        margin-top:15em;
+    }
+  }
+
+@media screen and (max-width: 660px){
+     .app-intro{
+        margin-top:8em;
+     }
+}
+
+@media screen and (max-width: 550px){
+    .app-right {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 495px){
+    .name-txt{
+        font-size: 35px;
+    }
+    .more-info{
+        font-size: 15px;
+        letter-spacing: 0.07;
+    }
+    .contact-btn{
+        padding: 5px 10px;
+        height: 35px;
+        font-size:15px;
+        width:max-content;
+    }
+}
+
+@media screen and (max-width:416px) {
+    .name-txt{
+        font-size: 30px;
+    }
+    .more-info{
+        font-size: 14px;
+        letter-spacing: 0.07;
+    }
+  }
+  
+
+  @media screen and (max-width:390px) {
+    .name-txt{
+        font-size: 30px;
+    }
+    .more-info{
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+    .hello-txt{
+        margin-bottom: 0em;
+        font-size: 14px;
+    }
+    
+  }
+  
+
+  @media screen and (max-width:356px) {
+    .app-intro {
+        /* margin-top: 8%; */
+        margin-top:12em;
+    }
+    .name-txt{
+        font-size: 30px;
+    }
+    .more-info{
+        font-size: 12px;
+        letter-spacing: 0em;line-height: 2em;
+    }
+    
+  }
+  
+  @media screen and (max-width:311px) {
+    .hello-txt{
+        font-size: 10px;
+    }
+    .app-intro {
+        /* margin-top: 8%; */
+        margin-top:12em;
+    }
+    .name-txt{
+        font-size: 25px;
+    }
+    .more-info{
+        font-size: 12px;
+        letter-spacing: 0em;line-height: 2em;
+    }
+    
+  }
+  

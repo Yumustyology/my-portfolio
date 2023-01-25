@@ -10,7 +10,7 @@ function Marquee({ rtl }) {
     infinite: true,
     slidesToShow: 7,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: "linear",

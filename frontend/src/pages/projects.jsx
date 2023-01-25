@@ -13,6 +13,7 @@ import { languageFilterList } from "../assets/js/languageFlter";
 import { projectData } from "../data";
 import { useEffect } from "react";
 import { axios } from "../utils/axios";
+import CircleText from "../components/circleText";
 
 const RightWingBar = ({
   sidebarOpen,
@@ -32,7 +33,7 @@ const RightWingBar = ({
         ) : (
           <BsFillCaretRightFill size={20} />
         )}
-        &nbsp;Experience
+        &nbsp;Languages_Filter
       </div>
       <div
         className={`sidebar-body ${sidebarOpen ? "opened" : "closed"}`}
@@ -116,7 +117,7 @@ function Projects() {
     }
   };
 
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth <= 899 ? false : true);
 
   const toggleSideNav = () => {
     setSidebarOpen(!sidebarOpen);
@@ -233,6 +234,14 @@ function Projects() {
                 )}
               </section>
             </div>
+            <div className="rotating-text-box fixed">
+                <CircleText
+                  prevPage="/experience"
+                  nextPage="/contact"
+                  isPrevPage={true}
+                  isNextPage={true}
+                />
+              </div>
           </div>
         </div>
         <div className="right-wing">
@@ -245,7 +254,7 @@ function Projects() {
                 ) : (
                   <BsFillCaretRightFill size={20} />
                 )}
-                &nbsp;projects
+                &nbsp;Languages_Filter
               </div>
               <div
                 className={`sidebar-body-project ${

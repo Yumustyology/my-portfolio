@@ -25,7 +25,7 @@ function Index() {
                 <span className="more-info-txt">
                   I build softwares to solve problem
                 </span>
-                &nbsp; &lt;/h2&gt;
+                &nbsp;&lt;/h2&gt;
                 {/* <div>
                   <Typed
                     strings={[
@@ -55,7 +55,7 @@ function Index() {
         <Marquee rtl={true} />
       </div>
       <div className="rotating-text-box fixed" >
-        <CircleText />
+        <CircleText prevPage='' nextPage='/about' isPrevPage={false} isNextPage={true}/>
       </div>
     </div>
   );

@@ -31,3 +31,9 @@
     margin-top: -36em;  
 
 }
+
+@media screen and (max-width:899px) {
+    .slider-container{
+        display: none;
+    }
+}

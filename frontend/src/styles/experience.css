@@ -323,14 +323,31 @@ pre[class*="language-"] {
     }
 }
 
-/* @media screen and (max-width:667px){
-    .white-wrap-tag-text{
-        font-size: 20px;
+@media screen and (max-width:280px){
+     .white-wrap-tag-text{
+        font-size: 16px;
     }
-    .experience-name,.experience-country{
+    /* .experience-name,.experience-country{
         font-size: 16.5px;
-    }
+    } */
+    
     .experience-role{
+        font-size: 14px;
+    } 
+    .experience-name, .experience-country{
         font-size: 15px;
     }
-} */
+    .white-exp-text {
+    font-size: 12px !important;
+    }
+    .experience-date{
+        font-size: 13px;
+    }
+    .experience-wrap-open-tag, .experience-wrap-close-tag{
+        font-size: 20px;
+    }
+    .experience-wrap-close-tag{
+        margin-top: 0em;
+    }
+}
+

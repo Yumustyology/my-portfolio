@@ -74,6 +74,8 @@ export const experienceList = [
     country: "London",
     role: "Backend Developer",
     tagName: "Circlein",
+    toDate:'12-3-21',
+    fromDate:'12-3-21',
   },
   {
     companyName: "Aibanc",
@@ -84,6 +86,8 @@ export const experienceList = [
     country: "Nigeria",
     role: "Mobile Developer",
     tagName: "Aibanc",
+    toDate:'12-3-21',
+    fromDate:'16-5-5'
   },
   {
     companyName: "Tenplus Digital Labs",
@@ -96,6 +100,8 @@ export const experienceList = [
     country: "Nigeria",
     role: "Fullstack Developer",
     tagName: "Tenplus",
+    toDate:'12-3-21',
+    fromDate:'16-5-5'
   },
   {
     companyName: "Progress Farms",
@@ -106,6 +112,8 @@ export const experienceList = [
     country: "Nigeria",
     role: "Fullstack Developer",
     tagName: "Progress_farms",
+    toDate:'12-3-21',
+    fromDate:'16-5-5'
   },
 ];
 
