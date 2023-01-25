@@ -14,6 +14,7 @@ import { projectData } from "../data";
 import { useEffect } from "react";
 import { axios } from "../utils/axios";
 import CircleText from "../components/circleText";
+import { useRef } from "react";
 
 const RightWingBar = ({
   sidebarOpen,
@@ -27,7 +28,11 @@ const RightWingBar = ({
   ];
   return (
     <div>
-      <div className="sidebar-title" onClick={toggleSideNav}  style={{borderTop:'1px solid rgba(255, 255, 255, 0.2)'}}>
+      <div
+        className="sidebar-title"
+        onClick={toggleSideNav}
+        style={{ borderTop: "1px solid rgba(255, 255, 255, 0.2)" }}
+      >
         {sidebarOpen ? (
           <BsFillCaretDownFill size={20} />
         ) : (
@@ -37,11 +42,15 @@ const RightWingBar = ({
       </div>
       <div
         className={`sidebar-body ${sidebarOpen ? "opened" : "closed"}`}
-        // style={{ height: languageFilterList.length === 0 && 0 }} 
+        // style={{ height: languageFilterList.length === 0 && 0 }}
       >
         <div className={`sidebar`}>
           {languageFilterList.map((data, i) => (
-            <div className="social-media-project" key={i} style={{marginBottom:'0em'}}>
+            <div
+              className="social-media-project"
+              key={i}
+              style={{ marginBottom: "0em" }}
+            >
               <div className="flex-align">
                 <label className="label">
                   <input
@@ -67,6 +76,7 @@ function Projects() {
   const [repeat, setRepeat] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
   const [languages, setLanguages] = useState([]);
   const [projects, setProjects] = useState([]);
+  const languageFilter = useRef(null)
 
   const getProjects = () => {
     axios.get("/projects").then((resp) => {
@@ -107,7 +117,7 @@ function Projects() {
   // useEffect(() => {
   //   updateFilter();
   // }, [languages]);
-
+  
   const setLanguage = (lang) => {
     if (languages.includes(lang)) {
       setLanguages(languages.filter((e) => e !== lang));
@@ -117,11 +127,23 @@ function Projects() {
     }
   };
 
-  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth <= 899 ? false : true);
+  const [sidebarOpen, setSidebarOpen] = useState(
+    window.innerWidth <= 899 ? false : true
+  );
 
   const toggleSideNav = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
+  useEffect(() => {
+    // console.log(languageFilter.current.scrollLeft);
+    languageFilter.current.scrollLeft = 40000
+    // languageFilter.current.scrollLeft = languageFilter.current.childNodes[-1].scrollIntoView()
+    console.log(languageFilter);
+    console.log(languageFilter.current.childNodes[-1]);
+  }, [languages])
+  
+
 
   return (
     <div>
@@ -133,10 +155,24 @@ function Projects() {
               <div
                 className="projects-page-title"
                 onClick={() => console.log(languages)}
-                style={{display:'flex',overflowX:'auto',borderRight:'none'}}
+                style={{
+                  display: "flex",
+                  overflowX: "auto",
+                  borderRight: "none",
+                }}
               >
                 {/* {languages.length != 0 ? languages.join("; ") : "all"} */}
-              <div className="projects-language-filter" style={{display:'-webkit-inline-box',overflowX:'auto'}}>{languages.length != 0 ? languages.map(lang => <div>{lang.split(' ').join('_')};&nbsp;</div>) : "all"}</div>
+                <div
+                  className="projects-language-filter"
+                  style={{ display: "-webkit-inline-box", overflowX: "auto" }}
+                  ref={languageFilter}
+                >
+                  {languages.length != 0
+                    ? languages.map((lang) => (
+                        <div>{lang.split(" ").join("_")};&nbsp;</div>
+                      ))
+                    : "all"}
+                </div>
               </div>
             </div>
             <div className="left-wing-top-inner md-drop-down">
@@ -235,13 +271,13 @@ function Projects() {
               </section>
             </div>
             <div className="rotating-text-box fixed">
-                <CircleText
-                  prevPage="/experience"
-                  nextPage="/contact"
-                  isPrevPage={true}
-                  isNextPage={true}
-                />
-              </div>
+              <CircleText
+                prevPage="/experience"
+                nextPage="/contact"
+                isPrevPage={true}
+                isNextPage={true}
+              />
+            </div>
           </div>
         </div>
         <div className="right-wing">
