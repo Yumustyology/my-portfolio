@@ -46,7 +46,7 @@ server.use("/experience", experienceUpload)
 
 server.use("/aboutMe", AboutMe)
 
-const PORT = process.env.PORT;
-// const PORT = 5000 || process.env.PORT;
+// const PORT = process.env.PORT;
+const PORT = 5000 || process.env.PORT;
 
 server.listen(PORT, () => console.log("user hit the server"));
