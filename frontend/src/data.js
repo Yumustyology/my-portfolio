@@ -12,7 +12,7 @@ export const projectData = [
     image: image1,
     projectInfo:
       "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
-    livePreview: "https://yusufmustahan.netlify.app",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
     githubLink: "https://github.com/Yumustyology",
     languages: ["react_js", "css", "mongodb"],
   },
@@ -21,7 +21,7 @@ export const projectData = [
     image: image4,
     projectInfo:
       "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
-    livePreview: "https://yusufmustahan.netlify.app",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
     githubLink: "https://github.com/Yumustyology",
     languages: ["react_native", "mongodb"],
   },
@@ -30,7 +30,7 @@ export const projectData = [
     image: image3,
     projectInfo:
       "Created An Hotel Rooms Site Where User Can Visit To View The Rooms They Want To Book Online, It's Features And See It's Description, Using A Headless CMS To Control My Data.",
-    livePreview: "https://yusufmustahan.netlify.app",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
     githubLink: "https://github.com/Yumustyology",
     languages: ["react_js", "css", "tailwind_css", "firebase"],
   },
@@ -39,7 +39,7 @@ export const projectData = [
     image: image2,
     projectInfo:
       "🤫 I Created A Netflix Clone Using React And Third Party API From TMDB, Though You Only Get To Watch Movies Trailer 😂",
-    livePreview: "https://yusufmustahan.netlify.app",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
     githubLink: "https://github.com/Yumustyology",
     languages: ["react_js", "api", "css","node_js"],
   },
@@ -48,7 +48,7 @@ export const projectData = [
     image: image5,
     projectInfo:
       "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
-    livePreview: "https://yusufmustahan.netlify.app",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
     githubLink: "https://github.com/Yumustyology",
     languages: ["api", "react_js", "material_ui"],
   },
@@ -57,7 +57,7 @@ export const projectData = [
     image: image4,
     projectInfo:
       "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
-    livePreview: "https://yusufmustahan.netlify.app",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
     githubLink: "https://github.com/Yumustyology",
     languages: ["api", "react_js", "material_ui"],
   },

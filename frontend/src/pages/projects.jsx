@@ -15,6 +15,8 @@ import { useEffect } from "react";
 import { axios } from "../utils/axios";
 import CircleText from "../components/circleText";
 import { useRef } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const RightWingBar = ({
   sidebarOpen,
@@ -75,8 +77,9 @@ const RightWingBar = ({
 function Projects() {
   const [repeat, setRepeat] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
   const [languages, setLanguages] = useState([]);
-  const [projects, setProjects] = useState([]);
-  const languageFilter = useRef(null)
+  // const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(projectData);
+  const languageFilter = useRef(null);
 
   const getProjects = () => {
     axios.get("/projects").then((resp) => {
@@ -117,7 +120,7 @@ function Projects() {
   // useEffect(() => {
   //   updateFilter();
   // }, [languages]);
-  
+
   const setLanguage = (lang) => {
     if (languages.includes(lang)) {
       setLanguages(languages.filter((e) => e !== lang));
@@ -137,13 +140,11 @@ function Projects() {
 
   useEffect(() => {
     // console.log(languageFilter.current.scrollLeft);
-    languageFilter.current.scrollLeft = 40000
+    languageFilter.current.scrollLeft = 40000;
     // languageFilter.current.scrollLeft = languageFilter.current.childNodes[-1].scrollIntoView()
     console.log(languageFilter);
     console.log(languageFilter.current.childNodes[-1]);
-  }, [languages])
-  
-
+  }, [languages]);
 
   return (
     <div>
@@ -204,9 +205,15 @@ function Projects() {
                       </div>
                       <div className="project-card">
                         <div className="project-image">
-                          <img
+                          {/* <img
                             src={data.image}
                             alt="project-img"
+                            className="project-img"
+                          /> */}
+                          <LazyLoadImage
+                            alt="project-img"
+                            effect="blur"
+                            src={data.image}
                             className="project-img"
                           />
                         </div>

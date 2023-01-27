@@ -22,7 +22,7 @@ function CircleText({ nextPage, prevPage, isPrevPage, isNextPage }) {
             <div className="left-nextBtn-container">
               <span
                 className="arrow-down"
-                style={{ position: "absolute", top: 43, right: 50 }}
+                style={{ position: "absolute", top: 43, right: 60 }}
               >
                 <BsArrowLeft size={30} color="#fff" />
               </span>
@@ -48,7 +48,7 @@ function CircleText({ nextPage, prevPage, isPrevPage, isNextPage }) {
             <div className="right-nextBtn-container">
               <span
                 className="arrow-down"
-                style={{ position: "absolute", top: 43, right: 50 }}
+                style={{ position: "absolute", top: 43, right: 55 }}
               >
                 <BsArrowRight size={30} color="#fff" />
               </span>
