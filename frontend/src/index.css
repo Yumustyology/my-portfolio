@@ -52,6 +52,7 @@ a{
   align-items: center;
 }
 svg{
+  /* display: block; */
   display: inline;
 }
 

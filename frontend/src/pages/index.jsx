@@ -23,7 +23,7 @@ function Index() {
               <div className="more-info">
                 &lt;h2&gt;&nbsp;
                 <span className="more-info-txt">
-                  I build softwares to solve problem
+                  I build softwares to solve problems
                 </span>
                 &nbsp;&lt;/h2&gt;
                 {/* <div>

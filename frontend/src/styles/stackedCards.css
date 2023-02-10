@@ -113,6 +113,7 @@ html {
   width: 490px;
   height: 270px;
   border-radius: 8px;
+  z-index: -20 !important;
 }
 .container .card-stack .card-list li:nth-child(1) {
   top: 24px;
@@ -241,10 +242,16 @@ html {
     width: 600px;
     height: 75vh;
     /* background-color:red; */
-    margin-top: -10em;
+    margin-top: -14em;
     margin-left: 7em;
     margin-right: 7em;
     transform: scale(0.9);
+  }
+}
+
+@media(min-height:760px) or (min-width: 1500px){
+  .container .card-stack {
+    margin-top: -8em;
   }
 }
 
@@ -252,7 +259,10 @@ html {
   .container .card-stack {
     /* background-color:red; */
     transform: scale(0.8);
-    margin-top: 0.1em;
+    /* margin-top: 0.1em; */
+    margin-top: -8em;
+    /* margin-top: -10em; */
+    /* margin-top: -10.9em; */
     /* margin-right: 7em; */
   }
 }
@@ -288,7 +298,7 @@ html {
   }
 }
 
-@media screen and (max-width:950px) {
+@media screen and (max-width:975px) {
   .container .card-stack{
     transform: scale(0.7);
     margin-top: -10em;
@@ -304,7 +314,8 @@ html {
 
 @media screen and (max-width:899px) and (min-height:667px) {
   .container .card-stack{
-    margin-top: -13em !important;
+    /* margin-top: -13em !important; */
+    margin-top: -15em !important;
     margin-right: 0em;
     margin-left: 0em;
   }
@@ -329,9 +340,54 @@ html {
   }
 }
 
+
 @media screen and (max-width: 495px){
   .container .card-stack{
     margin-top: -22em;
+  }
+}
+
+@media screen and (max-width:495px) and (min-height:640px) {
+  .container .card-stack{
+    margin-top: -12em;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  .container .card-stack{
+     /* TODO test very well */
+     /* margin-top: -30em; */
+     margin-top: -18em;
+     /* background: red; */
+  }
+}   
+
+@media screen and (max-width:1500px) and (min-height:640px) {
+  .container .card-stack{
+    /* margin-top: -10em; */
+    margin-top: -5em;
+  }
+}
+
+@media screen and (max-width:1500px) and (min-height:680px) {
+  .container .card-stack{
+    margin-top: -10em;
+    /* margin-top: -5em; */
+  }
+}
+
+@media screen and (max-width:1300px) and (min-height:800px) {
+  .container .card-stack{
+    margin-top: -15em;
+  }
+}
+
+
+
+
+@media screen and (max-width:1000px) and (min-height:1300px) {
+  .container .card-stack{
+    margin-top: -35.5em;
   }
 }
 
@@ -361,13 +417,11 @@ html {
     /* margin-top: -210em; */
     transform: scale(0.57);
   }
-}
 
-
-@media screen and (max-width:356px) {
 
   .container .card-stack{
     transform: scale(0.52);
+   
       margin-top: -25em;
   }
 }
@@ -380,3 +434,51 @@ html {
   }
 }
 
+
+
+
+
+@media screen and (max-height: 569px){
+  .container .card-stack{
+     /* TODO test very well */
+     margin-top: -14em;
+     /* background: red; */
+  }
+}
+
+
+
+@media screen and (max-height: 600px) and (max-width:1500px){
+  .container .card-stack{
+     /* TODO test very well */
+     margin-top: -7em;
+     /* background: red; */
+  }
+}
+
+
+
+@media screen and (max-height: 425px){
+  .container .card-stack{
+     /* TODO test very well */
+     margin-top: -13em;
+     /* background: red; */
+  }
+}
+
+
+@media screen and (max-height: 383px){
+  .container .card-stack{
+     /* TODO test very well */
+     margin-top: -10em;
+     /* background: red; */
+  }
+}
+
+@media screen and (max-height: 352px){
+  .container .card-stack{
+     /* TODO test very well */
+     margin-top: -5em;
+     /* background: red; */
+  }
+}

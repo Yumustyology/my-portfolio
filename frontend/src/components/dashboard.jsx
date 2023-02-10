@@ -9,7 +9,7 @@ function Dashboard() {
   return (
     <div>
            <div className="App">
-       <center>
+       <center style={{color:"white"}}>
         <button onClick={() => setTab("project")}>Project Upload</button>
          &nbsp; &nbsp; &nbsp; &nbsp;
         <button onClick={() => setTab("experience")}>Experience Upload</button>

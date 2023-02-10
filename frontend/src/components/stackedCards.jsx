@@ -4,14 +4,16 @@ import { featuredProject } from "../data";
 import "../styles/projects.css";
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineNavigateNext } from "react-icons/md";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 
 function StackedCards() {
-  useEffect(()=>{
+  useEffect(() => {
     // alert(window.innerHeight);
     // console.log(window.innerHeight)
-    console.log("window.innerHeight")
-    // alert(window.innerWidth);  
-  },[])
+    console.log("window.innerHeight");
+    // alert(window.innerWidth);
+  }, []);
   return (
     <div>
       <div className="container">
@@ -20,14 +22,31 @@ function StackedCards() {
             &lt;
           </span> */}
           <ul className="card-list">
-            {featuredProject.map((data) => (
+            {featuredProject.map((data, i) => (
               <li className="card">
                 <div className="feature-project-container">
                   <span className="feature-project-name">
-                    Project 1 // <span>_{data.projectName}</span>
+                    <Link to="/">
+                      Project 1 // <span>_{data.projectName}</span>
+                    </Link>
+                    {/* Project 1 //<span>_{data.projectName.split(" ").join("_")}</span> */}
+                    <span>
+                      <MdOutlineNavigateNext
+                        className="more-arrow"
+                        style={{ marginLeft: "0em", display: "inline" }}
+                        size={20}
+                      />
+                    </span>
                   </span>
                   <div className="swipe-card-img">
-                    <img src={data.image} className="swipe-img" />
+                    <LazyLoadImage
+                      style={{ position: "relative" }}
+                      alt="project-img"
+                      effect="blur"
+                      src={data.image}
+                      className="swipe-img"
+                    />
+                    {/* <img src={data.image} className="swipe-img" /> */}
                   </div>
                   {/* <div className="project-links" style={{height:"40px"}}>
                       <div className="live-preview">

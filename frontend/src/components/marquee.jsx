@@ -23,7 +23,7 @@ function Marquee({ rtl }) {
       <Slider {...settings} className="slider-container">
         {marqueeData.map((data,i) => (
           <div className="marquee-data" style={{display:"flex",alignItems:"center"}} key={i}>
-            <div>{data.icon}</div>&nbsp; <div>{data.name}</div>
+            <div style={{marginLeft:'2em'}}>{data.icon}</div>&nbsp; <div>{data.name}</div>
           </div>
         ))}
       </Slider>

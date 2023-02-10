@@ -19,6 +19,10 @@ export const marqueeData = [
     icon: <FaNodeJs size={25} color="#fff"/>,
   },
   {
+    name: "Express Native",
+    icon: <FaNodeJs size={25} color="#fff"/>,
+  },
+  {
     name: "Next Js",
     icon: <SiNextdotjs size={25} color="#fff"/>,
   },

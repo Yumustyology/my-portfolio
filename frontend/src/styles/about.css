@@ -71,8 +71,13 @@
     cursor: pointer;
 }
 
+/* .resume-bar{
+    border-top: 0px solid rgba(255, 255, 255, 0.2) !important;
+} */
+
 .sidebar-sub-title {
-    margin-top: 2em;
+    transition: 1s;
+    margin-top: .5em;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -147,7 +152,8 @@
 }
 
 .about-body {
-    width: 736px;
+    width: 100%;
+    /* width: 736px; */
     text-align: left;
     /* TODO u might later want to remove this */
     /* float: right; */
@@ -284,7 +290,7 @@ textarea {
 }
 
 #number {
-    width: 10%;
+    /* width: 10%; */
     height: 80vh;
     /* background: red; */
     line-height: 30px;
@@ -357,7 +363,7 @@ textarea {
 }
 
 
-
+/* media screens */
 
 
 
@@ -458,7 +464,13 @@ textarea {
 
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width:940px) {
+    .sidebar-title, .sidebar-sub-title{
+        font-size: 15px;
+    }
+
+}
+    @media screen and (min-width:900px) {
     .md-drop-down,.nav-link-inner{
         display: none;
     }
@@ -508,6 +520,11 @@ textarea {
         padding-left: 1em;
         padding-right: 1em;
     }
+    #number{
+        /* width:10%; */
+    }
+
+    
 }
 
 @media screen and (max-width: 480px){
@@ -519,6 +536,9 @@ textarea {
     }
      .list-interest{
         font-size: 15px;
+    }
+    #number{
+        width:18%;
     }
 
 }
@@ -535,4 +555,20 @@ textarea {
         font-size: 14px;
     }
 
+    #number{
+        width:20%;
+    }
+}
+
+
+
+@media screen and (max-width: 290px){
+
+    #number{
+        /* width:20%; */
+        font-size: 13px;
+    }
+    #text{
+        font-size: 14px;
+    }
 }

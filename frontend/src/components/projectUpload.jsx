@@ -183,7 +183,7 @@ function ProjectUpload() {
                   link to live preview{" "}
                 </a>
                 {"project-Info: " + projects.projectInfo + " : link to git: "}
-                <a href={projects.githubLink} target="_blank" without rel="noreferrer" rel="noreferrer">
+                <a href={projects.githubLink} target="_blank" without rel="noreferrer">
                   link to git{" "}
                 </a>
                 {"featured : " + projects.featuredApp}

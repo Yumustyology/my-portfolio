@@ -205,6 +205,16 @@ function Projects() {
                       </div>
                       <div className="project-card">
                         <div className="project-image">
+                          <div className="more-btn">
+                            <div>more</div>
+                            <div>
+                            <MdOutlineNavigateNext
+                              className="more-arrow"
+                              style={{ marginLeft: "0em", display: "inline" }}
+                              size={20}
+                            />
+                            </div>
+                          </div>
                           {/* <img
                             src={data.image}
                             alt="project-img"

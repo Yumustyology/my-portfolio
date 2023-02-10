@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 1em;
+    z-index: 1;
 }
 
 .slider-container {
@@ -20,6 +21,7 @@
 }
 
 .marquee-data {
+    /* width: max-content !important; */
     display: flex !important;
     align-items: center;
     justify-content: center;

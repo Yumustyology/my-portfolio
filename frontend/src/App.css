@@ -1,9 +1,18 @@
 .App {
   text-align: center;
   width: 100vw;
+  overflow: hidden;
+  height: 100vh;
 }
 
 
 @media (prefers-reduced-motion: no-preference) {
   
+}
+
+
+@media screen and (max-width: 899px) {
+  .App{
+    overflow: auto;
+  }
 }

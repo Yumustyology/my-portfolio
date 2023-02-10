@@ -271,6 +271,11 @@ textarea {
     cursor: pointer;
 }
 
+.loading-btn{
+    opacity: 0.35;
+}
+
+/* media screen */
 @media screen and (max-width:1300px) {
     .sidebar-body-contact .sidebar {
         font-family: 'Consolas';

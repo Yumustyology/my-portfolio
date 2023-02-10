@@ -10,6 +10,7 @@ import {
   BsLinkedin,
   BsGithub,
   BsFillCaretRightFill,
+  BsFillFileEarmarkFill,
 } from "react-icons/bs";
 import { RiWhatsappFill } from "react-icons/ri";
 import { ImInstagram, ImFacebook2 } from "react-icons//im";
@@ -228,11 +229,14 @@ function About() {
   const [sidebarBottomOpen, setSidebarBottomOpen] = useState(false);
   const [lineNumber, setLineNumber] = useState([]);
   const [tab, setTab] = useState("bio");
-  const [about, setAbout] = useState(null);
+  // const [about, setAbout] = useState(null);
+  const [about, setAbout] = useState("I");
   let [calcLines, setCalcLines] = useState();
+  let [resumeSidebarOpen, setResumeSidebarOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(
     window.innerWidth <= 899 ? false : true
   );
+
   let lineNum = [];
   let element = useRef(null);
 
@@ -250,6 +254,10 @@ function About() {
 
   const toggleBottomSideNav = () => {
     setSidebarBottomOpen(!sidebarBottomOpen);
+  };
+
+  const toggleResumeSideNav = () => {
+    setResumeSidebarOpen(!resumeSidebarOpen);
   };
 
   const doings = () => {
@@ -369,7 +377,23 @@ function About() {
                               About me (bio)
                             </b>
                           </span>
-                          {about?.info}
+                          {/* {about?.info} */}
+                          I am a Fullstack Developer and enjoy creating things
+                          that solve peoples problem using my coding
+                          "Ninjustsu😜"(skills). My interest in web development
+                          started back in the year 2016 when I decided to learn
+                          programming as it sounded fun😂, trust me I was going
+                          to learn the advanced programming languages🙄, until I
+                          discovered that HTML & CSS with an "Hello World! 😏"
+                          startup output was the basics knowledge I needed to
+                          get into the web programming world. 🚀Fast-forward to
+                          today, I have had the privilege of mentoring over 20
+                          junior Frontend Developers and 5 Backend programmers
+                          at an IT institute, as a start-up I teamed up with a
+                          friend of mine who does UIUX in other to move forward
+                          together in the tech industry. My main focus is
+                          building accessible, inclusive products and digital
+                          exceptional experiences to solve peoples problem
                           <br />
                           <span>*/</span>
                         </div>
@@ -453,6 +477,43 @@ function About() {
                         <HiFolder color="#9747FF" size={25} />
                         &nbsp;education
                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* resume */}
+
+                <div
+                  className="sidebar-sub-title"
+                  onClick={toggleResumeSideNav}
+                >
+                  {resumeSidebarOpen ? (
+                    <BsFillCaretDownFill size={20} />
+                  ) : (
+                    <BsFillCaretRightFill size={20} />
+                  )}
+                  &nbsp;resume
+                </div>
+                <div
+                  className={`sidebar-body-about about-top ${
+                    resumeSidebarOpen ? "opened" : "closed"
+                  }`}
+                >
+                  <div className="sidebar">
+                    <div className="social-media-about">
+                      <a
+                        href="https://drive.google.com/drive/folders/1ihpe6IfMVGt3VmLKZi-1_UfLDv765RkY?usp=sharing"
+                        rel="noreferrer"
+                        target="_blank"
+                        download
+                      >
+                        <div className="flex-align">
+                          {/*  <MdOutlineNavigateNext color="white" size={20} /> */}
+                          &nbsp;
+                          <BsFillFileEarmarkFill size={18} color="#787773" />
+                          &nbsp;yusuf_mustahan
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>

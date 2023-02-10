@@ -31,10 +31,13 @@ const RightWingBar = ({
 }) => {
   return (
     <div>
-      <div className="sidebar-title" onClick={()=>{
-        toggleTopSideNav()
-        sidebarBottomOpen && setSidebarBottomOpen(false);
-        }}>
+      <div
+        className="sidebar-title"
+        onClick={() => {
+          toggleTopSideNav();
+          sidebarBottomOpen && setSidebarBottomOpen(false);
+        }}
+      >
         {sidebarTopOpen ? (
           <BsFillCaretDownFill size={20} />
         ) : (
@@ -77,10 +80,13 @@ const RightWingBar = ({
         </div>
       </div>
       {/* social media handle */}
-      <div className="sidebar-sub-title" onClick={()=>{
-        toggleBottomSideNav()
-        sidebarTopOpen && setSidebarTopOpen(false);
-        }}>
+      <div
+        className="sidebar-sub-title"
+        onClick={() => {
+          toggleBottomSideNav();
+          sidebarTopOpen && setSidebarTopOpen(false);
+        }}
+      >
         {sidebarBottomOpen ? (
           <BsFillCaretDownFill size={20} />
         ) : (
@@ -193,7 +199,10 @@ function Contact() {
           pruneStates();
           showToast("message sent successfully", "msg_sent");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          setLoading(false);
+          console.log(err);
+        });
     } else {
       setLoading(false);
       showToast("Please fill all fields below", "correction");
@@ -207,8 +216,12 @@ function Contact() {
     });
   };
 
-  const [sidebarTopOpen, setSidebarTopOpen] = useState(  window.innerWidth <= 899 ? false : true);
-  const [sidebarBottomOpen, setSidebarBottomOpen] = useState(  window.innerWidth <= 899 ? false : true);
+  const [sidebarTopOpen, setSidebarTopOpen] = useState(
+    window.innerWidth <= 899 ? false : true
+  );
+  const [sidebarBottomOpen, setSidebarBottomOpen] = useState(
+    window.innerWidth <= 899 ? false : true
+  );
 
   const toggleTopSideNav = () => {
     setSidebarTopOpen(!sidebarTopOpen);
@@ -229,20 +242,20 @@ function Contact() {
             </div>
             {/* i put it here */}
             <div className="left-wing-top-inner md-drop-down">
-                  <div>
-                    <RightWingBar
-                      // tab={tab}
-                      // setTab={setTab}
-                      setSidebarTopOpen={setSidebarTopOpen}
-                      sidebarTopOpen={sidebarTopOpen}
-                      toggleTopSideNav={toggleTopSideNav}
-                      toggleBottomSideNav={toggleBottomSideNav}
-                      // changeTab={changeTab}
-                      sidebarBottomOpen={sidebarBottomOpen}
-                      setSidebarBottomOpen={setSidebarBottomOpen}
-                    />
-                  </div>
-                </div>
+              <div>
+                <RightWingBar
+                  // tab={tab}
+                  // setTab={setTab}
+                  setSidebarTopOpen={setSidebarTopOpen}
+                  sidebarTopOpen={sidebarTopOpen}
+                  toggleTopSideNav={toggleTopSideNav}
+                  toggleBottomSideNav={toggleBottomSideNav}
+                  // changeTab={changeTab}
+                  sidebarBottomOpen={sidebarBottomOpen}
+                  setSidebarBottomOpen={setSidebarBottomOpen}
+                />
+              </div>
+            </div>
           </div>
           <div className="left-wing-body">
             <ToastContainer
@@ -268,6 +281,7 @@ function Contact() {
                       <input
                         type="text"
                         value={subject}
+                        disabled={loading}
                         onChange={(e) => setSubject(e.target.value)}
                       />
                     </label>
@@ -279,6 +293,7 @@ function Contact() {
                       <input
                         type="email"
                         value={email}
+                        disabled={loading}
                         onChange={(e) => setEmail(e.target.value)}
                       />
                     </label>
@@ -288,14 +303,19 @@ function Contact() {
                     <label>
                       <div className="label">_message:</div>
                       <textarea
+                        disabled={loading}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                       ></textarea>
                     </label>
                   </div>
 
-                  <div className="inputs-container flex">
-                    <button className="submit-mail" onClick={sendMail}>
+                  <div className={`inputs-container flex`}>
+                    <button
+                      className={`submit-mail ${loading && "loading-btn"}`}
+                      onClick={sendMail}
+                      disabled={loading}
+                    >
                       submit-message
                     </button>
                     &nbsp;&nbsp;

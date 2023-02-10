@@ -162,7 +162,7 @@
 
 @media screen and (max-width: 660px){
      .app-intro{
-        margin-top:8em;
+        margin-top:10em;
      }
 }
 
@@ -243,9 +243,17 @@
         font-size: 25px;
     }
     .more-info{
-        font-size: 12px;
+        font-size: 10px;
+        /* font-size: 12px; */
         letter-spacing: 0em;line-height: 2em;
     }
     
+  }
+  
+
+  @media screen and (max-width:1000px) and (min-height:1300px) {
+    .app-intro{
+      margin-top: 15%;
+    }
   }
   

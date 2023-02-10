@@ -1,7 +1,9 @@
 // import image1 from "./assets/imgs/1.png"
 import image2 from "./assets/imgs/netflix-clone.png";
 import image3 from "./assets/imgs/ressort.png";
-import image4 from "./assets/imgs/4.jpg";
+import image4 from "./assets/imgs/multiversus1.png";
+import image7 from "./assets/imgs/hoobank.png";
+import image8 from "./assets/imgs/weather.png";
 import image5 from "./assets/imgs/covid.png";
 import image6 from "./assets/imgs/site.png";
 import image1 from "./assets/imgs/project-img.png";
@@ -18,7 +20,7 @@ export const projectData = [
   },
   {
     projectName: "Loan Application",
-    image: image4,
+    image: image6,
     projectInfo:
       "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
     livePreviewLink: "https://yusufmustahan.netlify.app",
@@ -55,6 +57,24 @@ export const projectData = [
   {
     projectName: "one app like that",
     image: image4,
+    projectInfo:
+      "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
+    githubLink: "https://github.com/Yumustyology",
+    languages: ["api", "react_js", "material_ui"],
+  },
+  {
+    projectName: "Covid Tracker",
+    image: image7,
+    projectInfo:
+      "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
+    livePreviewLink: "https://yusufmustahan.netlify.app",
+    githubLink: "https://github.com/Yumustyology",
+    languages: ["api", "react_js", "material_ui"],
+  },
+  {
+    projectName: "one app like that",
+    image: image8,
     projectInfo:
       "After Mastering React Js, I Decided To Solve A Problem With Colors Using React Js And A Third Party API As Programmers Find's It Dificult To Get Lighter And Deeper Shades Of Their Production Colors",
     livePreviewLink: "https://yusufmustahan.netlify.app",
