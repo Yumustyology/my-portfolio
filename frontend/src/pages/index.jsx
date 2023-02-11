@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/index.css";
 import StackedCards from "../components/stackedCards";
 import "../index.css";
@@ -6,8 +6,28 @@ import Marquee from "../components/marquee";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import CircleText from "../components/circleText";
+import alanBtn from '@alan-ai/alan-sdk-web';
+
 
 function Index() {
+
+
+  // useEffect(() => {
+  //   alanBtn({
+  //       key: 'a66bdda9b1d4c7f4f387d447a484d9602e956eca572e1d8b807a3e2338fdd0dc/stage',
+  //       bottom: '50px',
+  //       left: '50%',
+  //       right: '50%',
+  //       zIndex: 10,
+  //       onCommand: (commandData) => {
+  //         if (commandData.command === 'go:back') {
+  //           // Call the client code that will react to the received command
+  //         }
+  //       }
+  //   });
+  // }, []);
+
+
   return (
     <div>
       <Marquee rtl={false} />

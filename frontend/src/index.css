@@ -21,7 +21,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  overflow: hidden;
+  /* overflow: hidden ; */
 }
 
 

@@ -31,8 +31,6 @@ const repeat = [
 ];
 
 const RightWingBar = ({
-  tab,
-  setTab,
   sidebarOpen,
   setSidebarOpen,
   toggleSideNav,
@@ -40,6 +38,9 @@ const RightWingBar = ({
   changeTab,
   sidebarBottomOpen,
   setSidebarBottomOpen,
+  toggleResumeSideNav,
+  resumeSidebarOpen,
+  setResumeSidebarOpen,
 }) => {
   return (
     <div>
@@ -47,7 +48,10 @@ const RightWingBar = ({
         className="sidebar-title"
         onClick={() => {
           toggleSideNav();
-          !sidebarOpen && setSidebarBottomOpen(false);
+          // if (!sidebarOpen) {
+            setResumeSidebarOpen(false);
+            setSidebarBottomOpen(false);
+          // }
         }}
       >
         {sidebarOpen ? (
@@ -98,13 +102,55 @@ const RightWingBar = ({
         </div>
       </div>
 
+      {/* resume */}
+
+      <div className="sidebar-sub-title" onClick={()=>{
+        toggleResumeSideNav()
+        setSidebarBottomOpen(false);
+        setSidebarOpen(false);
+        }}>
+        {resumeSidebarOpen ? (
+          <BsFillCaretDownFill size={20} />
+        ) : (
+          <BsFillCaretRightFill size={20} />
+        )}
+        &nbsp;resume
+      </div>
+      <div
+        className={`sidebar-body-about about-top ${
+          resumeSidebarOpen ? "opened" : "closed"
+        }`}
+      >
+        <div className="sidebar">
+          <div className="social-media-about">
+            <a
+              href="https://drive.google.com/drive/folders/1ihpe6IfMVGt3VmLKZi-1_UfLDv765RkY?usp=sharing"
+              rel="noreferrer"
+              target="_blank"
+              download
+            >
+              <div className="flex-align">
+                {/*  <MdOutlineNavigateNext color="white" size={20} /> */}
+                &nbsp;
+                <BsFillFileEarmarkFill size={18} color="#787773" />
+                &nbsp;yusuf_mustahan
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* social media handle */}
       <div
         className="sidebar-sub-title"
         style={{ marginTop: "0em" }}
         onClick={() => {
           toggleBottomSideNav();
-          sidebarOpen && setSidebarOpen(false);
+          // sidebarOpen && setSidebarOpen(false);
+          // if (sidebarOpen) {
+            setResumeSidebarOpen(false);
+            setSidebarOpen(false);
+          // }
         }}
       >
         {sidebarBottomOpen ? (
@@ -229,8 +275,8 @@ function About() {
   const [sidebarBottomOpen, setSidebarBottomOpen] = useState(false);
   const [lineNumber, setLineNumber] = useState([]);
   const [tab, setTab] = useState("bio");
-  // const [about, setAbout] = useState(null);
-  const [about, setAbout] = useState("I");
+  const [about, setAbout] = useState(null);
+  // const [about, setAbout] = useState("I");
   let [calcLines, setCalcLines] = useState();
   let [resumeSidebarOpen, setResumeSidebarOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(
@@ -306,8 +352,9 @@ function About() {
   };
 
   useEffect(() => {
-    fetchAbout();
+    // fetchAbout();
   }, []);
+  fetchAbout();
   return (
     <div>
       <div>
@@ -338,6 +385,9 @@ function About() {
                       changeTab={changeTab}
                       sidebarBottomOpen={sidebarBottomOpen}
                       setSidebarBottomOpen={setSidebarBottomOpen}
+                      resumeSidebarOpen={resumeSidebarOpen} 
+                      setResumeSidebarOpen={setResumeSidebarOpen}
+                      toggleResumeSideNav={toggleResumeSideNav}
                     />
                   </div>
                 </div>
@@ -377,8 +427,8 @@ function About() {
                               About me (bio)
                             </b>
                           </span>
-                          {/* {about?.info} */}
-                          I am a Fullstack Developer and enjoy creating things
+                          {about?.info}
+                          {/* I am a Fullstack Developer and enjoy creating things
                           that solve peoples problem using my coding
                           "Ninjustsu😜"(skills). My interest in web development
                           started back in the year 2016 when I decided to learn
@@ -393,7 +443,7 @@ function About() {
                           friend of mine who does UIUX in other to move forward
                           together in the tech industry. My main focus is
                           building accessible, inclusive products and digital
-                          exceptional experiences to solve peoples problem
+                          exceptional experiences to solve peoples problem */}
                           <br />
                           <span>*/</span>
                         </div>

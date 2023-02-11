@@ -56,7 +56,7 @@ function Experience() {
   ];
 
   // const [sidebarOpen, setSidebarOpen] = useState(true); TODO change to true
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth <= 899 ? false : true);
   const rootRef = useRef(null);
 
   const toggleSideNav = () => {
@@ -134,8 +134,8 @@ function Experience() {
               {/* <ExperienceList /> */}
 
               <div className="experience-info-box">
-                {experienceList.length > 0 &&
-                  experienceList.map((data, i) => (
+                {experiences.length > 0 &&
+                  experiences.map((data, i) => (
                     <div key={i} id={i}>
                       <div className="experience-info">
                         <div className="experience-wrap-open-tag">

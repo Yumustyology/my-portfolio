@@ -27,6 +27,7 @@ function ExperienceUpload() {
       })
       .then((resp) => {
         getExp();
+        alert('experience upoaded')
         console.log(resp);
       });
   };
@@ -142,7 +143,7 @@ function ExperienceUpload() {
         />
       </div>
 
-      <button onClick={uploadExp}>Upload experience</button>
+      <button onClick={uploadExp} style={{color:'#fff'}}>Upload experience</button>
       <br />
 
       <br />

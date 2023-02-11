@@ -77,8 +77,8 @@ const RightWingBar = ({
 function Projects() {
   const [repeat, setRepeat] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
   const [languages, setLanguages] = useState([]);
-  // const [projects, setProjects] = useState([]);
-  const [projects, setProjects] = useState(projectData);
+  const [projects, setProjects] = useState([]);
+  // const [projects, setProjects] = useState(projectData);
   const languageFilter = useRef(null);
 
   const getProjects = () => {
@@ -117,14 +117,14 @@ function Projects() {
     getProjects();
   };
 
-  // useEffect(() => {
-  //   updateFilter();
-  // }, [languages]);
+  useEffect(() => {
+    updateFilter();
+  }, [languages]);
 
   const setLanguage = (lang) => {
     if (languages.includes(lang)) {
       setLanguages(languages.filter((e) => e !== lang));
-      // updateFilter1();
+      updateFilter1();
     } else {
       setLanguages([...languages, lang]);
     }

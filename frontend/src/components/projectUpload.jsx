@@ -8,13 +8,14 @@ function ProjectUpload() {
   const [projectInfo, setProjectInfo] = useState(null);
   const [githubLink, setGithubLink] = useState(null);
   const [featured, setFeatured] = useState(false);
-  const [languages, setLanguages] = useState([
-    "html",
-    "json",
-    "javascript",
-    "react_js",
-    "mongodb",
-  ]);
+  // const [languages, setLanguages] = useState([
+  //   "html",
+  //   "json",
+  //   "javascript",
+  //   "react_js",
+  //   "mongodb",
+  // ]);
+  const [languages, setLanguages] = useState([]);
   const [livePreviewLink, setLivePreviewLink] = useState(null);
 
   const onDrop = (picture) => {
@@ -37,6 +38,7 @@ function ProjectUpload() {
         .post("/projectsUpload", imgData)
         .then((res) => {
           console.log(res);
+          alert('project upoaded')
           getProjects();
         })
         .catch((error) => {
@@ -94,6 +96,7 @@ function ProjectUpload() {
         .put(`/projectsUpload/${id}`, imgData)
         .then((res) => {
           console.log(res);
+          alert('project upoaded')
           getProjects();
         })
         .catch((error) => {
@@ -143,15 +146,20 @@ function ProjectUpload() {
         onChange={(e) => setGithubLink(e.target.value)}
       />
       <select onChange={(e) => setFeatured(e.target.value)}>
-        <option value={false} defaultChecked>false</option>
+        <option value={false} defaultChecked>
+          false
+        </option>
         <option value={true}>true</option>
       </select>
 
-      {/* <input
+      <input
         type="text"
         placeholder="languages"
-        onChange={(e) => setLanguages(e.target.value)}
-      /> */}
+        onChange={(e) => {
+          setLanguages(e.target.value.split(","));
+          console.log(e.target.value.split(","));
+        }}
+      />
 
       <input
         type="text"
@@ -159,7 +167,7 @@ function ProjectUpload() {
         onChange={(e) => setLivePreviewLink(e.target.value)}
       />
 
-      <button onClick={upload}>upload</button>
+      <button onClick={upload} style={{color:'#fff'}}>upload</button>
 
       <br />
       <br />
@@ -177,22 +185,37 @@ function ProjectUpload() {
 
                 <a
                   href={projects.livePreviewLink}
-                  target="_blank" without rel="noreferrer"
+                  target="_blank"
+                  without
+                  rel="noreferrer"
                   // rel="noreferrer"
                 >
                   link to live preview{" "}
                 </a>
                 {"project-Info: " + projects.projectInfo + " : link to git: "}
-                <a href={projects.githubLink} target="_blank" without rel="noreferrer">
+                <a
+                  href={projects.githubLink}
+                  target="_blank"
+                  without
+                  rel="noreferrer"
+                >
                   link to git{" "}
                 </a>
                 {"featured : " + projects.featuredApp}
               </span>
-              <button onClick={() => deleteProjects(projects._id)}>
+              <button
+                onClick={() => deleteProjects(projects._id)}
+                style={{ color: "#fff" }}
+              >
                 Delete
               </button>
               &nbsp;&nbsp;
-              <button onClick={() => putProjects(projects._id)}>Edit</button>
+              <button
+                onClick={() => putProjects(projects._id)}
+                style={{ color: "#fff" }}
+              >
+                Edit
+              </button>
               <br />
               <br />
             </li>
