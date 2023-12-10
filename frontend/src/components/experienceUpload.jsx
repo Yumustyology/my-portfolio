@@ -142,12 +142,15 @@ function ExperienceUpload() {
           onChange={(e) => setCountry(e.target.value)}
         />
       </div>
-
+      
+      <br />
       <button onClick={uploadExp} style={{color:'#fff'}}>Upload experience</button>
       <br />
 
       <br />
       <button onClick={getExp}>get experience</button>
+      <br />
+      <br />
       <center>
         <h2 onClick={() => console.log(experiences)}>Experience</h2>
       </center>

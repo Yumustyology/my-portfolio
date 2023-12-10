@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/index.css";
 import StackedCards from "../components/stackedCards";
 import "../index.css";
 import Marquee from "../components/marquee";
 import { Link } from "react-router-dom";
-import Typed from "react-typed";
+// import Typed from "react-typed";
 import CircleText from "../components/circleText";
-import alanBtn from '@alan-ai/alan-sdk-web';
+// import alanBtn from '@alan-ai/alan-sdk-web';
 
 
 function Index() {
-
 
   // useEffect(() => {
   //   alanBtn({

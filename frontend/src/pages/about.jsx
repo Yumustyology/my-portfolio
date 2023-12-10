@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-
+import React, { useEffect, useState, useRef, useContext } from "react";
 import "../styles/experience.css";
-import Prism from "prismjs";
 import "../styles/about.css";
 import {
   BsFillCaretDownFill,
@@ -16,19 +14,11 @@ import { RiWhatsappFill } from "react-icons/ri";
 import { ImInstagram, ImFacebook2 } from "react-icons//im";
 import { MdMail, MdOutlineNavigateNext } from "react-icons/md";
 import { HiFolder } from "react-icons/hi";
-import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
-import { SiWebpack } from "react-icons/si";
-import { CgWebsite } from "react-icons/cg";
 import Interest from "../components/Interest";
 import Education from "../components/education";
-import { axios } from "../utils/axios";
 import CircleText from "../components/circleText";
-import { NavLink } from "react-router-dom";
+import { yungContext } from "../context/context";
 
-const repeat = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 6, 9, 9, 2, 7, 5, 4, 2, 6, 9, 5, 4, 3, 3, 1, 2,
-  2, 6, 4, 5, 7, 9,
-];
 
 const RightWingBar = ({
   sidebarOpen,
@@ -49,8 +39,8 @@ const RightWingBar = ({
         onClick={() => {
           toggleSideNav();
           // if (!sidebarOpen) {
-            setResumeSidebarOpen(false);
-            setSidebarBottomOpen(false);
+          setResumeSidebarOpen(false);
+          setSidebarBottomOpen(false);
           // }
         }}
       >
@@ -104,11 +94,14 @@ const RightWingBar = ({
 
       {/* resume */}
 
-      <div className="sidebar-sub-title" onClick={()=>{
-        toggleResumeSideNav()
-        setSidebarBottomOpen(false);
-        setSidebarOpen(false);
-        }}>
+      <div
+        className="sidebar-sub-title"
+        onClick={() => {
+          toggleResumeSideNav();
+          setSidebarBottomOpen(false);
+          setSidebarOpen(false);
+        }}
+      >
         {resumeSidebarOpen ? (
           <BsFillCaretDownFill size={20} />
         ) : (
@@ -148,8 +141,8 @@ const RightWingBar = ({
           toggleBottomSideNav();
           // sidebarOpen && setSidebarOpen(false);
           // if (sidebarOpen) {
-            setResumeSidebarOpen(false);
-            setSidebarOpen(false);
+          setResumeSidebarOpen(false);
+          setSidebarOpen(false);
           // }
         }}
       >
@@ -271,12 +264,12 @@ const RightWingBar = ({
 };
 
 function About() {
+  const { about } = useContext(yungContext);
+
   let getAboutTab = window.localStorage.getItem("aboutTab");
   const [sidebarBottomOpen, setSidebarBottomOpen] = useState(false);
   const [lineNumber, setLineNumber] = useState([]);
   const [tab, setTab] = useState("bio");
-  const [about, setAbout] = useState(null);
-  // const [about, setAbout] = useState("I");
   let [calcLines, setCalcLines] = useState();
   let [resumeSidebarOpen, setResumeSidebarOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(
@@ -290,9 +283,7 @@ function About() {
     getAboutTab && setTab(getAboutTab);
   }, [tab]);
 
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
+ 
 
   const toggleSideNav = () => {
     setSidebarOpen(!sidebarOpen);
@@ -326,7 +317,7 @@ function About() {
     if (about && !lineNum.includes(calcLines - 1)) {
       setTimeout(() => {
         doings();
-      }, 1000);
+      }, 200);
     } else {
       return;
     }
@@ -342,19 +333,7 @@ function About() {
     window.localStorage.setItem("aboutTab", tab);
   };
 
-  const fetchAbout = () => {
-    axios("AboutMe")
-      .then((resp) => {
-        setAbout(resp.data);
-        // console.log(resp.data);
-      })
-      .catch(console.log);
-  };
-
-  useEffect(() => {
-    // fetchAbout();
-  }, []);
-  fetchAbout();
+  
   return (
     <div>
       <div>
@@ -385,7 +364,7 @@ function About() {
                       changeTab={changeTab}
                       sidebarBottomOpen={sidebarBottomOpen}
                       setSidebarBottomOpen={setSidebarBottomOpen}
-                      resumeSidebarOpen={resumeSidebarOpen} 
+                      resumeSidebarOpen={resumeSidebarOpen}
                       setResumeSidebarOpen={setResumeSidebarOpen}
                       toggleResumeSideNav={toggleResumeSideNav}
                     />
@@ -696,11 +675,7 @@ function About() {
 
 export default About;
 
-const codeBlock = (info) => {
-  let code;
-  return (code = `I am a Fullstack Developer and enjoy creating things that solve peoples problem using my coding "Ninjustsu😜" (skills). My interest in web development started back in the year 2016 when I decided to learn programming as it sounded fun😂, trust me I was going to learn the advanced programming languages🙄, until I discovered that HTML & CSS with an "Hello World! 😏" startup output was the basics knowledge I needed to get into the web programming world. 🚀Fast-forward to today, I have had the privilege of mentoring over 20 junior Frontend Developers and 5 Backend programmers at an IT institute, as a start-up I teamed up with a friend of mine who does UIUX in other to move forward together in the tech industry. My main focus is building accessible, inclusive products and digital exceptional experiences to solve peoples problem.
-`);
-};
+
 
 // return (code = `I am a Fullstack Developer and enjoy creating things that solve peoples problem using my coding "Ninjustsu😜" (skills). \nMy interest in web development started back in the year 2016 when I decided to learn programming as it sounded fun😂,\ntrust me I was going to learn the advanced programming languages🙄,\nuntil I discovered that HTML & CSS with an "Hello World! 😏" startup output was the basics knowledge\nI needed to get into the web programming world. 🚀Fast-forward to today,\nI have had the privilege of mentoring over 20 junior Frontend Developers and 5 Backend programmers at an IT institute,\nas a start-up I teamed up with a friend of mine who does UIUX in other to move forward together in the tech industry.\nMy main focus is building accessible, inclusive products and digital exceptional experiences to solve peoples problem.
 

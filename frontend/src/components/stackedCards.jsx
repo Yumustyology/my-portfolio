@@ -1,19 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "../styles/stackedCards.css";
-import { featuredProject } from "../data";
 import "../styles/projects.css";
-import { BsGithub } from "react-icons/bs";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import { yungContext } from "../context/context";
+import { useContext } from "react";
 
 function StackedCards() {
-  useEffect(() => {
-    // alert(window.innerHeight);
-    // console.log(window.innerHeight)
-    console.log("window.innerHeight");
-    // alert(window.innerWidth);
-  }, []);
+  const { projects } = useContext(yungContext);
+ 
+
   return (
     <div>
       <div className="container">
@@ -22,33 +19,35 @@ function StackedCards() {
             &lt;
           </span> */}
           <ul className="card-list">
-            {featuredProject.map((data, i) => (
-              <li className="card">
-                <div className="feature-project-container">
-                  <span className="feature-project-name">
-                    <Link to="/">
-                      Project 1 // <span>_{data.projectName}</span>
-                    </Link>
-                    {/* Project 1 //<span>_{data.projectName.split(" ").join("_")}</span> */}
-                    <span>
-                      <MdOutlineNavigateNext
-                        className="more-arrow"
-                        style={{ marginLeft: "0em", display: "inline" }}
-                        size={20}
-                      />
+            {projects
+              .filter((e) => e.featuredApp === true)
+              .map((data, i) => (
+                <li className="card" key={i}>
+                  <div className="feature-project-container">
+                    <span className="feature-project-name">
+                      <Link to="/">
+                        {/* featured_project // <span>_{data.projectName}</span> */}
+                      </Link>
+                      {/* Project 1 //<span>_{data.projectName.split(" ").join("_")}</span> */}
+                      <span>
+                        <MdOutlineNavigateNext
+                          className="more-arrow"
+                          style={{ marginLeft: "0em", display: "inline" }}
+                          size={20}
+                        />
+                      </span>
                     </span>
-                  </span>
-                  <div className="swipe-card-img">
-                    <LazyLoadImage
-                      style={{ position: "relative" }}
-                      alt="project-img"
-                      effect="blur"
-                      src={data.image}
-                      className="swipe-img"
-                    />
-                    {/* <img src={data.image} className="swipe-img" /> */}
-                  </div>
-                  {/* <div className="project-links" style={{height:"40px"}}>
+                    <div className="swipe-card-img">
+                      <LazyLoadImage
+                        style={{ position: "relative" }}
+                        alt="project-img"
+                        effect="blur"
+                        src={data.image}
+                        className="swipe-img"
+                      />
+                      {/* <img src={data.image} className="swipe-img" /> */}
+                    </div>
+                    {/* <div className="project-links" style={{height:"40px"}}>
                       <div className="live-preview">
                         <div>
                           <a href={data.livePreview} target="_blank" without rel="noreferrer">
@@ -69,9 +68,9 @@ function StackedCards() {
                         </a>
                       </div>
                     </div> */}
-                </div>
-              </li>
-            ))}
+                  </div>
+                </li>
+              ))}
           </ul>
           {/* <span className="buttons next" href="#">
             &gt;

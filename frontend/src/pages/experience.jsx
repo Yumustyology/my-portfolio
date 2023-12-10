@@ -1,19 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/experience.css";
 import { BsFillCaretDownFill, BsFillCaretRightFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
-
-import ExperienceList from "../components/experienceList";
-import { experienceList } from "../data";
-import { axios } from "../utils/axios";
 import { FormatDate as formatDate } from "../utils/dateFormat";
 import CircleText from "../components/circleText";
+import { yungContext } from "../context/context";
 
 const RightWingBar = ({ sidebarOpen, toggleSideNav, experiences }) => {
-  const repeat = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 6, 9, 9, 2, 7, 5, 4, 2, 6, 9, 5, 4, 3, 3, 1,
-    2, 2, 6, 4, 5, 7, 9,
-  ];
   return (
     <div>
       <div className="sidebar-title" onClick={toggleSideNav}>
@@ -47,29 +39,18 @@ const RightWingBar = ({ sidebarOpen, toggleSideNav, experiences }) => {
 };
 
 function Experience() {
-  const [experiences, setExperiences] = useState([]);
-  const [date, setDate] = useState(null);
 
-  const repeat = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 6, 9, 9, 2, 7, 5, 4, 2, 6, 9, 5, 4, 3, 3, 1,
-    2, 2, 6, 4, 5, 7, 9,
-  ];
+  const { experiences } = useContext(yungContext);
+
 
   // const [sidebarOpen, setSidebarOpen] = useState(true); TODO change to true
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth <= 899 ? false : true);
-  const rootRef = useRef(null);
 
   const toggleSideNav = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const getExp = () => {
-    axios.get("/experience").then((resp) => setExperiences(resp.data));
-  };
 
-  useEffect(() => {
-    getExp();
-  }, []);
 
   return (
     <div>

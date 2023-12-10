@@ -10,16 +10,14 @@ import Projects from "./pages/projects";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/about";
 import OverlayLoader from "./components/OverlayLoader";
-import { useState } from "react";
+import { useContext } from "react";
 import Dashboard from "./components/dashboard";
+import { yungContext } from "./context/context";
 
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  setTimeout(() => {
-    setLoading(false);
-  }, 1000);
+  const {loading} = useContext(yungContext)
+  
   return (
     <div className="App">
       {loading && <OverlayLoader />}

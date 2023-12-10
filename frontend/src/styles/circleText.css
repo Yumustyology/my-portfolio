@@ -38,6 +38,12 @@
     color: #fff;
 }
 
+.arrow-down{
+    /* top: 43px !important;  */
+    /* right: 60; */
+    /* right:110px !important  */
+}
+
 /* @keyframes */
 
 @keyframes rotateText {
@@ -110,5 +116,12 @@
 @media screen and (max-width:400px) {
     .left-nextBtn-container,.right-nextBtn-container {
         width: 130px;
+    }
+}
+
+@media screen and (min-width: 401px){
+    .arrow-down{
+        top: 43px !important; 
+        right:110px !important 
     }
 }

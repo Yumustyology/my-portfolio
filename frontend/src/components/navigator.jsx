@@ -4,7 +4,6 @@ import "../styles/navigator.css";
 import { Twirl as Hamburger } from 'hamburger-react'
 
 function Navigator() {
-  const [active,setActive] = useState("/")
   const [sidebarOpen,setSidebarOpen] = useState(false)
   return (
     <div>
@@ -16,7 +15,7 @@ function Navigator() {
             <NavLink to="/experience" className={({isActive})=> `${isActive && "active"}`} end><div>_experience</div></NavLink>
             <NavLink to="/projects" className={({isActive})=> `${isActive && "active"}`} end><div>_project</div></NavLink>
             <NavLink to="/contact" className={({isActive})=> `${isActive && "active"}`} end><div>_contact me</div></NavLink>
-            <NavLink to="/dashboard" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>dashb</div></NavLink>
+            {/* <NavLink to="/dashboard" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>dashb</div></NavLink> */}
             {/* </span> */}
         </div>
         <div className={`navigator-sidebar ${sidebarOpen ? 'open-sidebar' : 'closed-sidebar'}`}>
@@ -26,8 +25,8 @@ function Navigator() {
             <NavLink to="/about" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>_about</div></NavLink>
             <NavLink to="/experience" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>_experience</div></NavLink>
             <NavLink to="/projects" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>_project</div></NavLink>
-            <vNavLink to="/contact" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>_contact me</div></vNavLink>
-            <NavLink to="/dashboard" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>dashb</div></NavLink>
+            <NavLink to="/contact" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>_contact me</div></NavLink>
+            {/* <NavLink to="/dashboard" className={({isActive})=> `${isActive && "active"}`} end><div onClick={()=>setSidebarOpen(!sidebarOpen)}>dashb</div></NavLink> */}
             {/* </span> */}
         </div>
         </div>

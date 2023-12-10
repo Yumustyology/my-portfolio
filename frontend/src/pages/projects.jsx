@@ -1,22 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/projects.css";
 import {
   BsFillCaretDownFill,
   BsGithub,
   BsFillCaretRightFill,
 } from "react-icons/bs";
-import { MdMail } from "react-icons/md";
-import { GrNext } from "react-icons/gr";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { languageFilterList } from "../assets/js/languageFlter";
-// import projectimg from "../imgs/project-img.png";
-import { projectData } from "../data";
 import { useEffect } from "react";
-import { axios } from "../utils/axios";
 import CircleText from "../components/circleText";
 import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { yungContext } from "../context/context";
 
 const RightWingBar = ({
   sidebarOpen,
@@ -24,10 +20,6 @@ const RightWingBar = ({
   setLanguage,
   languageFilterList,
 }) => {
-  const repeat = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 6, 9, 9, 2, 7, 5, 4, 2, 6, 9, 5, 4, 3, 3, 1,
-    2, 2, 6, 4, 5, 7, 9,
-  ];
   return (
     <div>
       <div
@@ -42,10 +34,7 @@ const RightWingBar = ({
         )}
         &nbsp;Languages_Filter
       </div>
-      <div
-        className={`sidebar-body ${sidebarOpen ? "opened" : "closed"}`}
-        // style={{ height: languageFilterList.length === 0 && 0 }}
-      >
+      <div className={`sidebar-body ${sidebarOpen ? "opened" : "closed"}`}>
         <div className={`sidebar`}>
           {languageFilterList.map((data, i) => (
             <div
@@ -75,58 +64,56 @@ const RightWingBar = ({
 };
 
 function Projects() {
-  const [repeat, setRepeat] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+  const { projects, setProjects, getProjects } = useContext(yungContext);
   const [languages, setLanguages] = useState([]);
-  const [projects, setProjects] = useState([]);
-  // const [projects, setProjects] = useState(projectData);
+  const [updatedProjectData, setUpdatedProjectData] = useState(projects);
   const languageFilter = useRef(null);
-
-  const getProjects = () => {
-    axios.get("/projects").then((resp) => {
-      console.log(resp);
-      setProjects(resp.data.reverse());
-    });
-  };
-
-  useEffect(() => {
-    getProjects();
-  }, []);
 
   let formattedLangs = [];
 
-  const updateFilter = () => {
-    formattedLangs = languages.map((langa) => {
-      return langa.split(" ").join("_").toLowerCase();
-    });
+  const filterProjects = (projectsData, filterLangs) => {
+    console.log("tuib ", updatedProjectData);
+    console.log("tuiby ", projectsData, filterLangs);
 
-    formattedLangs.length > 0 &&
-      setProjects(
-        projects.filter((e) =>
-          formattedLangs.every((val) => e.languages.includes(val))
-        )
-      );
-
-    formattedLangs.length > 0 && console.log("info ", formattedLangs);
-
-    console.log("languages altered ");
-
-    console.log("filteredLangs ", formattedLangs);
+    // if (formattedLangs.length > 0) {
+    //   return projectsData.filter((data) => {
+    //     return filterLangs.every((filterLang) =>
+    //       data.languages.includes(filterLang)
+    //     );
+    //   });
+    // } else {
+    //   return projects
+    // }
   };
-
-  const updateFilter1 = () => {
-    getProjects();
-  };
-
-  useEffect(() => {
-    updateFilter();
-  }, [languages]);
 
   const setLanguage = (lang) => {
     if (languages.includes(lang)) {
       setLanguages(languages.filter((e) => e !== lang));
-      updateFilter1();
     } else {
       setLanguages([...languages, lang]);
+    }
+
+    formattedLangs = languages.map((langa) => {
+      return langa.split(" ").join("_").toLowerCase();
+    });
+
+    let filteredProject = filterProjects(updatedProjectData, formattedLangs);
+
+    // setUpdatedProjectData(filteredProject);
+
+    console.log("filteredProj ", filteredProject);
+
+    if (formattedLangs.length > 0) {
+      setUpdatedProjectData(
+        updatedProjectData.filter((data) => {
+          return formattedLangs.every((filterLang) =>
+            data.languages.includes(filterLang)
+          );
+        })
+      );
+      // setUpdatedProjectData(filtered);
+    } else {
+      setUpdatedProjectData(projects);
     }
   };
 
@@ -139,11 +126,7 @@ function Projects() {
   };
 
   useEffect(() => {
-    // console.log(languageFilter.current.scrollLeft);
     languageFilter.current.scrollLeft = 40000;
-    // languageFilter.current.scrollLeft = languageFilter.current.childNodes[-1].scrollIntoView()
-    console.log(languageFilter);
-    console.log(languageFilter.current.childNodes[-1]);
   }, [languages]);
 
   return (
@@ -162,15 +145,19 @@ function Projects() {
                   borderRight: "none",
                 }}
               >
-                {/* {languages.length != 0 ? languages.join("; ") : "all"} */}
                 <div
                   className="projects-language-filter"
                   style={{ display: "-webkit-inline-box", overflowX: "auto" }}
                   ref={languageFilter}
                 >
-                  {languages.length != 0
-                    ? languages.map((lang) => (
-                        <div>{lang.split(" ").join("_")};&nbsp;</div>
+                  {languages.length !== 0
+                    ? languages.map((lang, i) => (
+                        <div
+                          key={i}
+                          onClick={() => console.log(formattedLangs)}
+                        >
+                          {lang.split(" ").join("_")};&nbsp;
+                        </div>
                       ))
                     : "all"}
                 </div>
@@ -191,8 +178,8 @@ function Projects() {
           <div className="left-wing-body">
             <div className="max-width">
               <section className="projects-body">
-                {projects.length > 0 ? (
-                  projects.map((data, i) => (
+                {updatedProjectData.length > 0 ? (
+                  updatedProjectData.map((data, i) => (
                     <div className="projects-info" key={i}>
                       <div className="project-name">
                         <span>Project {i + 1} //</span>{" "}
@@ -208,18 +195,13 @@ function Projects() {
                           <div className="more-btn">
                             <div>more</div>
                             <div>
-                            <MdOutlineNavigateNext
-                              className="more-arrow"
-                              style={{ marginLeft: "0em", display: "inline" }}
-                              size={20}
-                            />
+                              <MdOutlineNavigateNext
+                                className="more-arrow"
+                                style={{ marginLeft: "0em", display: "inline" }}
+                                size={20}
+                              />
                             </div>
                           </div>
-                          {/* <img
-                            src={data.image}
-                            alt="project-img"
-                            className="project-img"
-                          /> */}
                           <LazyLoadImage
                             alt="project-img"
                             effect="blur"
