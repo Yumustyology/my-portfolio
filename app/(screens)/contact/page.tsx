@@ -19,10 +19,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { ClipLoader } from "react-spinners";
 // import CircleText from "../components/circleText";
 import Link from "next/link";
-import ContactRightWingSidebar from "@/lib/ui/molecules/contact/ContactRightWingSidebar";
+import ContactRightWingSidebar from "@/ui/molecules/contact/ContactRightWingSidebar";
 import { pageTitleClassName } from "@/lib/utils/generalClassNames";
 import { cn } from "@/lib/utils";
-import Container from "@/lib/ui/atoms/Container";
+import Container from "@/ui/atoms/Container";
 import { doSendMail } from "@/lib/actions/doSendMail";
 
 function page() {
