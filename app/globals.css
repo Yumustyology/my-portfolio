@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.3em;
+  overflow:hidden;
+  background-color: #1E1E1E;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  /* transition: all .3s ease-in-out; */
+  cursor: url(../public/assets/images/cursor-md.png), auto;
+}
+
+
+
+.hidden-scrollbar {
+  /* Hide the scrollbar thumb */
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  /* For Firefox */
+  scrollbar-color: transparent transparent !important;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  width: 0.5rem !important;
+}
+
+.hidden-scrollbar::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.section,
+.span {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.08em;
+    height: 30px
+}
+
+.section {
+    color: #FFBD44;
+}
+
+.span {
+    color: hsla(234, 63%, 58%, 1);
+}
+
+.className_tag_text {
+  color: #FF605C;
+}
+
+.className_tag_class {
+  color: #3d5aa8;
+}
+
+.sidebar-body-contact {
+  overflow-y: auto;
+  transition: 1s;
+}
+
+.white-exp-text {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.left-wing-body::-webkit-scrollbar,
+.sidebar-body::-webkit-scrollbar {
+    width: 0px;
+}
+
+.inputs-container input {
+  box-shadow: 0px 0px 2.86885px rgba(255, 255, 255, 0.5);
+}
+
+textarea {
+  box-shadow: 0px 0px 2.86885px rgba(255, 255, 255, 0.5);
+}
+
+.Toastify__toast-theme--dark{
+  background: #252526 !important;
+  margin-top: 3em;
+}
+
+.Toastify__progress-bar-theme--dark {
+  background: #696767 !important;
+}
