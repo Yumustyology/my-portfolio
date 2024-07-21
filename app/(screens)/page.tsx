@@ -1,9 +1,7 @@
-import { SkillMarquee } from "@/lib/ui/molecules/SkillsMarquee";
+import Container from "@/ui/atoms/Container";
+import { SkillMarquee } from "@/ui/molecules/SkillsMarquee";
+import StackedCards from "@/ui/molecules/StackedCards";
 import Link from "next/link";
-import React from "react";
-import "./style.css";
-import Container from "@/lib/ui/atoms/Container";
-import StackedCards from "@/lib/ui/molecules/StackedCards";
 
 const HomePage = () => {
   return (

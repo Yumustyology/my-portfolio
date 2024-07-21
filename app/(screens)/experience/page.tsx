@@ -3,13 +3,12 @@ import { cn, formatDate } from "@/lib/utils";
 import "../style.css";
 // import { FormatDate } from "@/lib/utils/dateFormat";
 import React, { useEffect, useState } from "react";
-import EperienceRightWingSideBar from "@/lib/ui/molecules/experience/EperienceRightWingSideBar";
-import { pageTitleClassName } from "@/lib/utils/generalClassNames";
-import Container from "@/lib/ui/atoms/Container";
+import Container from "@/ui/atoms/Container";
 import doGetExperience from "@/lib/actions/doGetExperience";
-// import CircleText from "../components/circleText";
+import { pageTitleClassName } from "@/lib/utils/generalClassNames";
+import EperienceRightWingSideBar from "@/ui/molecules/experience/EperienceRightWingSideBar";
+import { ExperienceSkeleton } from "@/ui/molecules/skeletons/ExperienceSkeleton";
 import useSWR from "swr";
-import { ExperienceSkeleton } from "@/lib/ui/molecules/skeletons/ExperienceSkeleton";
 
 type ExperienceType = {
   tagName: string;

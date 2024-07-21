@@ -1,17 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-// import "../style.css";
-import RightWingBar from "@/lib/ui/molecules/about/RightWing";
-import AboutMeText from "@/lib/ui/molecules/about/AboutMeText";
-import { about } from "@/lib/dummyData";
-import CircleText from "@/lib/ui/atoms/CircleText";
-import Container from "@/lib/ui/atoms/Container";
-import Interest from "@/lib/ui/molecules/about/Interest";
-import Education from "@/lib/ui/molecules/about/Education";
 import { pageTitleClassName } from "@/lib/utils/generalClassNames";
 import { cn } from "@/lib/utils";
-// import Interest from "../components/Interest";
-// import Education from "../components/education";
+import { about } from "@/lib/dummyData";
+import AboutMeText from "@/ui/molecules/about/AboutMeText";
+import Education from "@/ui/molecules/about/Education";
+import Interest from "@/ui/molecules/about/Interest";
+import RightWingBar from "@/ui/molecules/about/RightWing";
+import Container from "@/ui/atoms/Container";
+
 
 type tabType = "bio" | "education" | "interest";
 

@@ -1,6 +1,6 @@
-import GridPatternDashed from "@/lib/ui/atoms/GridPatternBg";
-import Footer from "@/lib/ui/molecules/Footer";
-import Navigator from "@/lib/ui/molecules/Navigator";
+import GridPatternDashed from "@/ui/atoms/GridPatternBg";
+import Footer from "@/ui/molecules/Footer";
+import Navigator from "@/ui/molecules/Navigator";
 import { ReactNode } from "react";
 import { ToastContainer } from "react-toastify";
 

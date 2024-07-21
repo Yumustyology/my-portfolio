@@ -1,26 +1,16 @@
 "use client";
-import React, { useState } from "react";
-import "../style.css";
-import {
-  BsFillCaretDownFill,
-  BsGithub,
-  BsFillCaretRightFill,
-} from "react-icons/bs";
-import { MdOutlineNavigateNext } from "react-icons/md";
-import { useEffect, useRef } from "react";
-import ProjectsRightWingSidebar from "@/lib/ui/molecules/projects/ProjectsRightWingSidebar";
-import LazyImageLoad from "@/lib/ui/atoms/LazyLoadImage";
-import Link from "next/link";
-import { pageTitleClassName } from "@/lib/utils/generalClassNames";
-import { cn } from "@/lib/utils";
-import Container from "@/lib/ui/atoms/Container";
-import BlurFade from "@/lib/ui/atoms/magic-ui/blur-fade";
-import { ProjectCard } from "@/lib/ui/atoms/ProjectCard";
-import { BLUR_FADE_DELAY } from "@/lib/constants";
-import { projects } from "@/lib/Data";
+
 import doGetProjects from "@/lib/actions/doGetProjects";
+import { BLUR_FADE_DELAY } from "@/lib/constants";
+import { cn } from "@/lib/utils";
+import { pageTitleClassName } from "@/lib/utils/generalClassNames";
+import Container from "@/ui/atoms/Container";
+import { ProjectCard } from "@/ui/atoms/ProjectCard";
+import BlurFade from "@/ui/atoms/magic-ui/blur-fade";
+import ProjectsRightWingSidebar from "@/ui/molecules/projects/ProjectsRightWingSidebar";
+import { ExperienceSkeleton } from "@/ui/molecules/skeletons/ExperienceSkeleton";
+import React, { useState, useRef } from "react";
 import useSWR from "swr";
-import { ExperienceSkeleton } from "@/lib/ui/molecules/skeletons/ExperienceSkeleton";
 
 function page() {
   //   const projects: any[] = [];
