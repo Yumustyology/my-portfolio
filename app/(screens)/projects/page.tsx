@@ -13,14 +13,13 @@ import React, { useState, useRef } from "react";
 import useSWR from "swr";
 
 function page() {
-  //   const projects: any[] = [];
   const {
     data: projects,
     error,
     isLoading,
   } = useSWR("projects", doGetProjects);
-  console.log(projects);
-  console.log(error);
+  // console.log(projects);
+  // console.log(error);
 
   const [, setTechnologies] = useState<any[]>([]);
   const [updatedProjectData, setUpdatedProjectData] = useState(projects);

@@ -7,6 +7,8 @@ import { getPlaceholderImage } from "@/lib/getPlaceholderImage";
 import Link from "next/link";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { Skeleton } from "../atoms/magic-ui/Skeleton";
+import doGetProjects from "@/lib/actions/doGetProjects";
+import useSWR from "swr";
 
 const CARD_OFFSET = 10;
 const SCALE_FACTOR = 0.06;
@@ -36,13 +38,19 @@ const CardSkeleton: React.FC<{ index: number }> = ({ index }) => (
 );
 
 const StackedCards: React.FC = () => {
-  const [cards, setCards] = useState(projects);
+  const {
+    data: projects,
+    error,
+    isLoading,
+  } = useSWR("projects", doGetProjects);
+
   const [placeholders, setPlaceholders] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const autoSwipeTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [cards, setCards] = useState(projects);
 
   useEffect(() => {
     const fetchPlaceholders = async () => {
+      if (!projects?.length) return;
       const placeholdersData = await Promise.all(
         projects.map(async (data) => {
           const placeholder = await getPlaceholderImage(data.image);
@@ -50,19 +58,18 @@ const StackedCards: React.FC = () => {
         })
       );
       setPlaceholders(placeholdersData);
-      setIsLoading(false);
     };
 
     fetchPlaceholders();
-  }, []);
+  }, [projects?.length]);
 
   const moveToEnd = (from: number): void => {
-    setCards((prevCards) => move(prevCards, from, prevCards.length - 1));
+    setCards((prevCards) => prevCards && move(prevCards, from, prevCards.length - 1));
     resetAutoSwipeTimer();
   };
 
   const autoSwipe = () => {
-    setCards((prevCards) => move(prevCards, 0, prevCards.length - 1));
+    setCards((prevCards) => prevCards && move(prevCards, 0, prevCards.length - 1));
   };
 
   const resetAutoSwipeTimer = () => {
@@ -88,7 +95,7 @@ const StackedCards: React.FC = () => {
           ? Array.from(Array(3).keys()).map((_, index) => (
               <CardSkeleton key={index} index={index} />
             ))
-          : cards.map((data, index) => {
+          : cards && cards.map((data, index) => {
               const blur = placeholders[index];
               const canDrag = index === 0;
 
