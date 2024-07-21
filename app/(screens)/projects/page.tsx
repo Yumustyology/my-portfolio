@@ -68,13 +68,13 @@ function page() {
     // }
   };
 
-  const [sidebarOpen, setSidebarOpen] = useState(
-   false
-  );
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  useEffect(()=>{
-    typeof window !== undefined && setSidebarOpen(window.innerWidth <= 899 ? false : true)
-  },[])
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSidebarOpen(window.innerWidth <= 899 ? false : true);
+    }
+  }, []);
 
   const toggleSideNav = () => {
     setSidebarOpen(!sidebarOpen);

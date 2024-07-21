@@ -23,9 +23,11 @@ function index() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    typeof window !== undefined &&
+    if (typeof window !== 'undefined') {
       setSidebarOpen(window.innerWidth <= 899 ? false : true);
-  },[]);
+    }
+  }, []);
+
   useEffect(() => {
     getAboutTab && setTab(getAboutTab);
   }, [tab]);

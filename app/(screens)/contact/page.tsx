@@ -59,17 +59,15 @@ function page() {
     });
   };
 
-  const [sidebarTopOpen, setSidebarTopOpen] = useState(
-  false
-  );
-  const [sidebarBottomOpen, setSidebarBottomOpen] = useState(
-  false
-  );
+  const [sidebarTopOpen, setSidebarTopOpen] = useState(false);
+  const [sidebarBottomOpen, setSidebarBottomOpen] = useState(false);
 
-  useEffect(()=>{
-    typeof window !== undefined && setSidebarTopOpen(window.innerWidth <= 899 ? false : true)
-    typeof window !== undefined && setSidebarBottomOpen(window.innerWidth <= 899 ? false : true)
-  },[])
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSidebarTopOpen(window.innerWidth <= 899 ? false : true);
+      setSidebarBottomOpen(window.innerWidth <= 899 ? false : true);
+    }
+  }, []);
 
   const toggleTopSideNav = () => {
     setSidebarTopOpen(!sidebarTopOpen);
