@@ -9,7 +9,6 @@ import Interest from "@/ui/molecules/about/Interest";
 import RightWingBar from "@/ui/molecules/about/RightWing";
 import Container from "@/ui/atoms/Container";
 
-
 type tabType = "bio" | "education" | "interest";
 
 function index() {
@@ -21,10 +20,12 @@ function index() {
   const [tab, setTab] = useState<tabType>("bio");
 
   let [resumeSidebarOpen, setResumeSidebarOpen] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(
-    window.innerWidth <= 899 ? false : true
-  );
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  useEffect(() => {
+    typeof window !== undefined &&
+      setSidebarOpen(window.innerWidth <= 899 ? false : true);
+  },[]);
   useEffect(() => {
     getAboutTab && setTab(getAboutTab);
   }, [tab]);
@@ -48,9 +49,12 @@ function index() {
 
   return (
     <Container bordered>
-      <div className="flex" style={{
-        fontFamily: "Consolas",
-      }}>
+      <div
+        className="flex"
+        style={{
+          fontFamily: "Consolas",
+        }}
+      >
         <div className="left-wing w-3/4 border-r border-r-[#ffffff33] h-screen">
           <div className="left-wing-top border-b border-b-[#ffffff33] h-[50px] xlgTablet:border-b-none">
             <div className="left-wing-top-inner hidden border-b-none">
@@ -85,7 +89,7 @@ function index() {
             </div>
             <div className="left-wing-top-inner">
               <div
-                className={cn("page-title",pageTitleClassName)}
+                className={cn("page-title", pageTitleClassName)}
                 style={{
                   fontFamily: "Consolas",
                   fontStyle: "normal",
@@ -110,7 +114,7 @@ function index() {
                 ) : tab === "interest" ? (
                   <div className="about-interest">
                     <div>
-                      <Interest /> 
+                      <Interest />
                     </div>
                   </div>
                 ) : (

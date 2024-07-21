@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import "../style.css";
 import {
   BsFillCaretDownFill,
@@ -60,11 +60,16 @@ function page() {
   };
 
   const [sidebarTopOpen, setSidebarTopOpen] = useState(
-    window.innerWidth <= 899 ? false : true
+  false
   );
   const [sidebarBottomOpen, setSidebarBottomOpen] = useState(
-    window.innerWidth <= 899 ? false : true
+  false
   );
+
+  useEffect(()=>{
+    typeof window !== undefined && setSidebarTopOpen(window.innerWidth <= 899 ? false : true)
+    typeof window !== undefined && setSidebarBottomOpen(window.innerWidth <= 899 ? false : true)
+  },[])
 
   const toggleTopSideNav = () => {
     setSidebarTopOpen(!sidebarTopOpen);

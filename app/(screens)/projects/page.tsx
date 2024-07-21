@@ -9,7 +9,7 @@ import { ProjectCard } from "@/ui/atoms/ProjectCard";
 import BlurFade from "@/ui/atoms/magic-ui/blur-fade";
 import ProjectsRightWingSidebar from "@/ui/molecules/projects/ProjectsRightWingSidebar";
 import { ExperienceSkeleton } from "@/ui/molecules/skeletons/ExperienceSkeleton";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import useSWR from "swr";
 
 function page() {
@@ -69,8 +69,12 @@ function page() {
   };
 
   const [sidebarOpen, setSidebarOpen] = useState(
-    window.innerWidth <= 899 ? false : true
+   false
   );
+
+  useEffect(()=>{
+    typeof window !== undefined && setSidebarOpen(window.innerWidth <= 899 ? false : true)
+  },[])
 
   const toggleSideNav = () => {
     setSidebarOpen(!sidebarOpen);
