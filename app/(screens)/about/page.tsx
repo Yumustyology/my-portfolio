@@ -12,9 +12,7 @@ import Container from "@/ui/atoms/Container";
 type tabType = "bio" | "education" | "interest";
 
 function index() {
-  let getAboutTab: tabType | null = window.localStorage.getItem(
-    "aboutTab"
-  ) as never as tabType;
+  let getAboutTab: tabType | null = null
   const [sidebarBottomOpen, setSidebarBottomOpen] = useState(false);
 
   const [tab, setTab] = useState<tabType>("bio");
@@ -24,6 +22,11 @@ function index() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      
+      getAboutTab = window.localStorage.getItem(
+        "aboutTab"
+      ) as never as tabType;
+
       setSidebarOpen(window.innerWidth <= 899 ? false : true);
     }
   }, []);
