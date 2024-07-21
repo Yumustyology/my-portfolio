@@ -3,7 +3,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import move from "lodash-move";
 import Image from "next/image";
-import { projects } from "@/lib/Data";
 import { getPlaceholderImage } from "@/lib/getPlaceholderImage";
 import Link from "next/link";
 import { MdOutlineNavigateNext } from "react-icons/md";
