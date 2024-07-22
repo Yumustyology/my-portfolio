@@ -8,7 +8,7 @@ import Container from "@/ui/atoms/Container";
 import { ProjectCard } from "@/ui/atoms/ProjectCard";
 import BlurFade from "@/ui/atoms/magic-ui/blur-fade";
 import ProjectsRightWingSidebar from "@/ui/molecules/projects/ProjectsRightWingSidebar";
-import { ExperienceSkeleton } from "@/ui/molecules/skeletons/ExperienceSkeleton";
+import { ProjectCardSkeleton } from "@/ui/molecules/skeletons/ProjectCard";
 import React, { useState, useRef, useEffect } from "react";
 import useSWR from "swr";
 
@@ -142,7 +142,7 @@ function page() {
             {/* project card */}
             <section className="projects-body pb-20 pt-[1.5em] h-[70vh] xlgTablet:h-[75dvh] overflow-y-auto hidden-scrollbar lgDesktop:[pb-8]">
               {isLoading ? (
-                <ExperienceSkeleton />
+                <ProjectCardSkeleton />
               ) : projects && projects.length > 0 ? (
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-[700px] lgDesktop:max-w-[800px] mx-auto">
                   {projects.map((project, i) => (
