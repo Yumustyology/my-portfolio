@@ -1,8 +1,8 @@
 import { Skeleton } from "../../atoms/magic-ui/Skeleton";
 
 export const ExperienceSkeleton = () =>
-  [1, 2, 3, 4, 5].map((skeleton) => (
-    <div className="experience-info ml-[4%] w-[736px] opacity-90" key={skeleton}>
+  [1, 2, 3].map((skeleton) => (
+    <div className="experience-info ml-[4%] w-[736px] opacity-90 mb-20" key={skeleton}>
       <Skeleton className="h-6 w-1/4 mb-[.3em] bg-[#FFBD44]"></Skeleton>
       <div className="tabcontent-sm px-8 w-full">
         <Skeleton className="h-8 w-1/2 mb-2 bg-gray-100"></Skeleton>
