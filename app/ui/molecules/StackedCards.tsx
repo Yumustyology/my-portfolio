@@ -46,7 +46,14 @@ const StackedCards: React.FC = () => {
 
   const [placeholders, setPlaceholders] = useState<string[]>([]);
   const autoSwipeTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const [cards, setCards] = useState(projects);
+  const featuredProjects = projects?.filter(
+    (project) => project.featuredApp == true
+  );
+  const [cards, setCards] = useState<undefined | any[]>([]);
+
+  useEffect(() => {
+    setCards(featuredProjects);
+  }, [featuredProjects?.length]);
 
   useEffect(() => {
     const fetchPlaceholders = async () => {
@@ -64,12 +71,16 @@ const StackedCards: React.FC = () => {
   }, [projects?.length]);
 
   const moveToEnd = (from: number): void => {
-    setCards((prevCards) => prevCards && move(prevCards, from, prevCards.length - 1));
+    setCards(
+      (prevCards) => prevCards && move(prevCards, from, prevCards.length - 1)
+    );
     resetAutoSwipeTimer();
   };
 
   const autoSwipe = () => {
-    setCards((prevCards) => prevCards && move(prevCards, 0, prevCards.length - 1));
+    setCards(
+      (prevCards) => prevCards && move(prevCards, 0, prevCards.length - 1)
+    );
   };
 
   const resetAutoSwipeTimer = () => {
@@ -95,7 +106,8 @@ const StackedCards: React.FC = () => {
           ? Array.from(Array(3).keys()).map((_, index) => (
               <CardSkeleton key={index} index={index} />
             ))
-          : cards && cards.map((data, index) => {
+          : cards &&
+            cards.map((data, index) => {
               const blur = placeholders[index];
               const canDrag = index === 0;
 
