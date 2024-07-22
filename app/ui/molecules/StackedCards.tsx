@@ -135,9 +135,9 @@ const StackedCards: React.FC = () => {
                   dragListener={canDrag}
                   onDragEnd={() => moveToEnd(index)}
                 >
-                  <div className="feature-project-container pt-4 px-5">
+                  <div className="feature-project-container pt-4 px-5 text-sm">
                     <span
-                      className="feature-project-name text-[#ff605c] font-normal text-base tracking-widest "
+                      className="feature-project-name text-[#ff605c] wrap font-normal text-base tracking-wide"
                       style={{
                         fontFamily: "Consolas",
                       }}
@@ -173,7 +173,7 @@ const StackedCards: React.FC = () => {
                         layout="fill"
                         objectFit="cover"
                         sizes="100%"
-                        className="swipe-img"
+                        className="swipe-img h-[320px] overflow-hidden"
                       />
                     </div>
                   </div>
@@ -195,13 +195,13 @@ const wrapperStyle: React.CSSProperties = {
 
 const cardWrapStyle: React.CSSProperties = {
   position: "relative",
-  width: "350px",
+  width: "355px",
   height: "355px",
 };
 
 const cardStyle: React.CSSProperties = {
   position: "absolute",
-  width: "430px",
+  width: "440px",
   height: "270px",
   borderRadius: "8px",
   transformOrigin: "top center",
