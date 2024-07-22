@@ -107,7 +107,8 @@ function page() {
                               {data?.fromDate &&
                                 formatDate(data?.fromDate.toLocaleString())}
                               &nbsp;&#8212;&nbsp;
-                              {formatDate(data?.toDate?.toLocaleString()) ?? "Present"}
+                              {data.toDate ?
+                                formatDate(data?.toDate.toLocaleString()) : "Present"}
                             </b>
                           </div>
                         </div>
