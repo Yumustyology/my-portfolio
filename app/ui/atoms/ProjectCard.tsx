@@ -46,21 +46,21 @@ export function ProjectCard({
       }
     >
       <Link
-        href={link || "#"}
+        href={link?.startsWith("http") ? link : `https://${link}` || "#"}
         className={cn("block cursor-pointer", className)}
       >
         {video ? (
           <video
-            src={video}
+            src={video?.startsWith("http") ? video : `https://${video}`}
             autoPlay
             loop
             muted
             playsInline
-            className="pointer-events-none mx-auto h-[190px] w-full object-cover object-top" // needed because random black line at bottom of video
+            className="pointer-events-none mx-auto h-[190px] w-full object-cover object-top"
           />
         ) : image ? (
           <LazyImageLoad
-            src={image}
+            src={image?.startsWith("http") ? image : `https://${image}`}
             alt={title}
             className="h-40 w-full overflow-hidden object-cover object-top"
           />
@@ -68,15 +68,20 @@ export function ProjectCard({
       </Link>
       <CardHeader className="px-2">
         <div className="space-y-1">
-          <CardTitle
-            className="mt-1 text-base text-white"
-            style={{
-              fontFamily: "Consolas",
-            }}
+          <Link
+            href={link?.startsWith("http") ? link : `https://${link}` || "#"}
+            className={cn("block cursor-pointer", className)}
           >
-            <span className="className_tag_text">_</span>
-            {title.split(" ").join("_")}
-          </CardTitle>
+            <CardTitle
+              className="mt-1 text-base text-white"
+              style={{
+                fontFamily: "Consolas",
+              }}
+            >
+              <span className="className_tag_text">_</span>
+              {title.split(" ").join("_")}
+            </CardTitle>
+          </Link>
           <time className="font-sans text-xs text-white">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
@@ -128,7 +133,15 @@ export function ProjectCard({
           </Link>
 
           <div className="git-preview flex items-center">
-            <Link href={githubLink ?? "#"} target="_blank" rel="noreferrer">
+            <Link
+              href={
+                githubLink?.startsWith("http")
+                  ? githubLink
+                  : `https://${githubLink}` ?? "#"
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
               <BsGithub style={{ cursor: "pointer" }} size={20} />
             </Link>
           </div>
