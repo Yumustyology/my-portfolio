@@ -10,11 +10,11 @@ export const doSendMail = async ({
   subject: string;
 }) => {
   axios
-    .post("/contactMe", { message, email, subject })
+    .post("contactMe", { message, email, subject })
     .then((response:any) => {
       console.log(response);
     })
     .catch((err:any) => {
-      console.log(err);
+      throw err;
     });
 };

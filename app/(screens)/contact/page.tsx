@@ -41,12 +41,20 @@ function page() {
     setSubject("");
     setLoading(false);
   };
+
   const sendMail = async () => {
     if (subject && email && message) {
-      setLoading(true);
-      const resp = await doSendMail({ subject, email, message });
-      showToast("message sent successfully", "msg_sent");
-      setLoading(false);
+      try {
+        setLoading(true);
+        const resp = await doSendMail({ subject, email, message });
+        console.log(resp);
+        showToast("message sent successfully", "msg_sent");
+      } catch (e) {
+        console.log(e);
+        showToast("something went wrong!", "msg_err");
+      } finally {
+        setLoading(false);
+      }
     } else {
       showToast("Please fill all fields below", "correction");
     }
