@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import move from "lodash-move";
 import Image from "next/image";
@@ -13,6 +13,12 @@ import useSWR from "swr";
 const CARD_OFFSET = 10;
 const SCALE_FACTOR = 0.06;
 const AUTO_SWIPE_INTERVAL = 5000; // 5 seconds
+
+interface Project {
+  projectName: string;
+  image: string;
+  featuredApp: boolean;
+}
 
 const CardSkeleton: React.FC<{ index: number }> = ({ index }) => (
   <motion.li
@@ -39,36 +45,41 @@ const CardSkeleton: React.FC<{ index: number }> = ({ index }) => (
 
 const StackedCards: React.FC = () => {
   const {
-    data: projects,
+    data: projects = [],
     error,
     isLoading,
-  } = useSWR("projects", doGetProjects);
-
+  } = useSWR<Project[]>("projects", doGetProjects);
   const [placeholders, setPlaceholders] = useState<string[]>([]);
+  const [placeholdersLoading, setPlaceholdersLoading] = useState(true);
   const autoSwipeTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const featuredProjects = projects?.filter(
-    (project) => project.featuredApp == true
+
+  const featuredProjects = useMemo(
+    () => projects?.filter((project) => project.featuredApp),
+    [projects]
   );
-  const [cards, setCards] = useState<undefined | any[]>([]);
+
+  const [cards, setCards] = useState<undefined | Project[]>(featuredProjects);
 
   useEffect(() => {
     setCards(featuredProjects);
-  }, [featuredProjects?.length]);
+  }, [featuredProjects]);
 
   useEffect(() => {
     const fetchPlaceholders = async () => {
       if (!projects?.length) return;
+      setPlaceholdersLoading(true);
       const placeholdersData = await Promise.all(
         projects.map(async (data) => {
-          const placeholder = await getPlaceholderImage(data.image);
-          return placeholder.placeholder;
+          const { placeholder } = await getPlaceholderImage(data.image);
+          return placeholder;
         })
       );
       setPlaceholders(placeholdersData);
+      setPlaceholdersLoading(false); 
     };
 
     fetchPlaceholders();
-  }, [projects?.length]);
+  }, [projects]);
 
   const moveToEnd = (from: number): void => {
     setCards(
@@ -99,10 +110,12 @@ const StackedCards: React.FC = () => {
     };
   }, [cards]);
 
+  if (error) return <div>Error loading projects</div>;
+
   return (
     <div style={wrapperStyle}>
       <ul style={cardWrapStyle}>
-        {isLoading
+        {isLoading || placeholdersLoading
           ? Array.from(Array(3).keys()).map((_, index) => (
               <CardSkeleton key={index} index={index} />
             ))
@@ -138,9 +151,7 @@ const StackedCards: React.FC = () => {
                   <div className="feature-project-container pt-4 px-5 text-sm">
                     <span
                       className="feature-project-name text-[#ff605c] wrap font-normal text-base tracking-wide"
-                      style={{
-                        fontFamily: "Consolas",
-                      }}
+                      style={{ fontFamily: "Consolas" }}
                     >
                       <Link href="/">
                         featured_project //{" "}
@@ -158,7 +169,7 @@ const StackedCards: React.FC = () => {
                       </span>
                     </span>
                     <div
-                      className="swipe-card-img mt-2 overflow-hidden rounded-md box-border bg-red-400"
+                      className="swipe-card-img mt-2 overflow-hidden rounded-md box-border"
                       style={{
                         position: "relative",
                         height: "195px",

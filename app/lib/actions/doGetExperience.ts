@@ -5,9 +5,9 @@ import { ExperienceType } from "../types/generalTypes";
 
 export default async function doGetExperience():Promise<ExperienceType[]>  {
   try {
-    const resp = await axios(`/experience`);
+    const resp = await axios(`experience`);
     if (resp) {
-      return resp.data;
+      return resp?.data?.data;
     }
   } catch (err: any) {
     console.log(err);

@@ -14,7 +14,7 @@ const SkillBox = ({ icon, name }: { icon: ReactNode; name: string }) => (
 
 export function SkillMarquee() {
   return (
-    <div className="relative hidden bg-red-400 xlgTablet:flex h-auto w-screen flex-row items-center justify-center overflow-hidden text-white">
+    <div className="relative hidden xlgTablet:flex h-auto w-screen flex-row items-center justify-center overflow-hidden text-white">
       <Marquee pauseOnHover className="[--duration:20s] right-0 fixed top-24">
         {firstRow.map((skill) => (
           <SkillBox key={skill.name} {...skill} />

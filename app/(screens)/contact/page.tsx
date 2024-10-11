@@ -123,7 +123,7 @@ function page() {
                 fontFamily: "Consolas",
               }}
             >
-              <section className="contact-body ml-[4%] text-left w-[736px] h-[70dvh] xlgTablet:h-[8dvh]">
+              <section className="contact-body ml-[4%] text-left w-[736px] overflow-scroll pl-[.09em] h-[70dvh] xlgTablet:h-[80dvh] hidden-scrollbar">
                 <div className="contact-info mt-[3em]">
                   <div className="inputs-container mb-[1em]">
                     <label>
@@ -159,7 +159,7 @@ function page() {
                         _message:
                       </div>
                       <textarea
-                        className="w-[520px] min-h-[220px] pl-[1em] pt-[1em] text-whit bg-[#252526] rounded-[4.4px]"
+                        className="w-[520px] text-white min-h-[220px] pl-[1em] pt-[1em] text-whit bg-[#252526] rounded-[4.4px]"
                         disabled={loading}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
@@ -167,7 +167,7 @@ function page() {
                     </label>
                   </div>
 
-                  <div className={`inputs-container mb-[1em] flex`}>
+                  <div className={`inputs-container mb-[5em] flex`}>
                     <button
                       className={cn(
                         "submit-mail flex py-4 px-5 gap-3 bg-[#2e2e2e] min-h-[44px] rounded-md w-fit font-normal text-2xl leading-[74.37%] items-start tracking-wide laptop:tracking-wider text-white border-none outline-none mt-[1em] cursor-pointer",

@@ -18,8 +18,7 @@ function page() {
     error,
     isLoading,
   } = useSWR("projects", doGetProjects);
-  // console.log(projects);
-  // console.log(error);
+ 
 
   const [, setTechnologies] = useState<any[]>([]);
   const [updatedProjectData, setUpdatedProjectData] = useState(projects);

@@ -3,9 +3,9 @@ import { axios } from "../config/axios.config";
 
 export default async function doGetProjects():Promise<any[]>  {
   try {
-    const resp = await axios(`/projects`);
+    const resp = await axios(`projects`);
     if (resp) {
-      return resp.data;
+      return resp?.data?.data ?? [];
     }
   } catch (err: any) {
     console.log(err);

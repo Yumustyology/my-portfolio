@@ -225,7 +225,7 @@ const RightWingBar = ({
       {/* small screen display */}
       {screenRender == "small" ? (
         <div
-          className="block bg-red-400 xlgTablet:hidden"
+          className="block xlgTablet:hidden"
           style={{
             fontFamily: "Consolas",
           }}
